@@ -1,0 +1,56 @@
+{
+  /*
+   * This package.json defines the dependencies, scripts, and metadata for the Reporting and Analytics Service.
+   *
+   * Requirements Addressed:
+   * - Comprehensive Reporting and Analytics (Technical Specification/13.6 Reporting and Analytics):
+   *   Provide comprehensive reporting and analytical tools for tracking, managing, and forecasting expenses, tailored to different user roles.
+   *
+   * Internal Dependencies:
+   * - ReportModel (src/models/reportModel.ts):
+   *   Defines the schema and structure for report data used in the service.
+   * - dataAggregator (src/utils/dataAggregator.ts):
+   *   Aggregates data from various sources to generate comprehensive reports.
+   * - authMiddleware (src/middlewares/authMiddleware.ts):
+   *   Ensures secure access to the reporting service by enforcing authentication and authorization.
+   * - reportService (src/services/reportService.ts):
+   *   Handles the business logic for generating and managing reports.
+   * - analyticsService (src/services/analyticsService.ts):
+   *   Provides analytical capabilities for processing and analyzing aggregated data.
+   *
+   * External Dependencies:
+   * - "mongoose@^5.10.9":
+   *   Interacts with MongoDB to fetch and store aggregated report data.
+   * - "jsonwebtoken@^8.5.1":
+   *   Used for verifying JWT tokens to authenticate users.
+   * - "express@^4.17.1":
+   *   Used for setting up the HTTP server and routing.
+   *
+   * Dev Dependencies:
+   * - "jest@^26.6.0":
+   *   Provides a testing framework for writing and running unit tests.
+   * - "supertest@^6.0.0":
+   *   Facilitates HTTP assertions for testing Express.js applications.
+   */
+
+  "name": "reporting-analytics-service",
+  "version": "1.0.0",
+  "description": "Provides comprehensive reporting and analytical tools for tracking, managing, and forecasting expenses, tailored to different user roles.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "mongoose": "^5.10.9",
+    "jsonwebtoken": "^8.5.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.0",
+    "supertest": "^6.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
