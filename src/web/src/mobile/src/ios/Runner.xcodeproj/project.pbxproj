@@ -1,0 +1,281 @@
+// !$*UTF8*$!
+{
+    archiveVersion = 1;
+    classes = {
+    };
+    objectVersion = 50;
+    objects = {
+
+/* Begin PBXProject section */
+        PROJECTID123456789 /* Project object */ = {
+            isa = PBXProject;
+            attributes = {
+                LastUpgradeCheck = 1300;
+                TargetAttributes = {
+                    TARGETID123456789 = {
+                    };
+                };
+            };
+            buildConfigurationList = BUILDCONFIGLISTID1234 /* Build configuration list for PBXProject */;
+            compatibilityVersion = "Xcode 13.0";
+            developmentRegion = en;
+            hasScannedForEncodings = 0;
+            knownRegions = (
+                en,
+            );
+            mainGroup = MAINGROUPID123456;
+            productRefGroup = PRODUCTSGROUPID1234 /* Products */;
+            projectDirPath = "";
+            projectRoot = "";
+            targets = (
+                TARGETID123456789,
+            );
+        };
+/* End PBXProject section */
+
+/* Begin PBXNativeTarget section */
+        TARGETID123456789 /* GlobalExpenseTracker */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = TARGETBUILDCONFIGLISTID1234 /* Build configuration list for PBXNativeTarget "GlobalExpenseTracker" */;
+            buildPhases = (
+                SOURCESBUILDPHASEID123 /* Sources */,
+                FRAMEWORKSBUILDPHASEID123 /* Frameworks */,
+                RESOURCESBUILDPHASEID123 /* Resources */,
+            );
+            dependencies = (
+            );
+            name = "GlobalExpenseTracker";
+            productName = "GlobalExpenseTracker";
+            productReference = PRODUCTID123456789 /* GlobalExpenseTracker.app */;
+            productType = "com.apple.product-type.application";
+            /* This target defines the iOS application 'GlobalExpenseTracker', addressing 'Mobile Features' as per Technical Specification/13.8 Mobile Features */
+        };
+/* End PBXNativeTarget section */
+
+/* Begin XCBuildConfiguration section */
+        DEBUGBUILDCONFIGID123 /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                PRODUCT_NAME = "GlobalExpenseTracker";
+                PRODUCT_BUNDLE_IDENTIFIER = "com.example.GlobalExpenseTracker"; /* Specified in BUILD_SETTINGS globals */
+                CODE_SIGN_IDENTITY = "iPhone Developer"; /* Specified in BUILD_SETTINGS globals */
+                DEVELOPMENT_TEAM = "YOUR_TEAM_ID"; /* Specified in BUILD_SETTINGS globals */
+                PROVISIONING_PROFILE_SPECIFIER = "YOUR_PROVISIONING_PROFILE"; /* Specified in BUILD_SETTINGS globals */
+            };
+            name = "Debug";
+        };
+        RELEASEBUILDCONFIGID123 /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                PRODUCT_NAME = "GlobalExpenseTracker";
+                PRODUCT_BUNDLE_IDENTIFIER = "com.example.GlobalExpenseTracker"; /* Specified in BUILD_SETTINGS globals */
+                CODE_SIGN_IDENTITY = "iPhone Developer"; /* Specified in BUILD_SETTINGS globals */
+                DEVELOPMENT_TEAM = "YOUR_TEAM_ID"; /* Specified in BUILD_SETTINGS globals */
+                PROVISIONING_PROFILE_SPECIFIER = "YOUR_PROVISIONING_PROFILE"; /* Specified in BUILD_SETTINGS globals */
+            };
+            name = "Release";
+        };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+        BUILDCONFIGLISTID1234 /* Build configuration list for PBXProject */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                DEBUGBUILDCONFIGID123 /* Debug */,
+                RELEASEBUILDCONFIGID123 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = "Release";
+        };
+        TARGETBUILDCONFIGLISTID1234 /* Build configuration list for PBXNativeTarget "GlobalExpenseTracker" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                DEBUGBUILDCONFIGID123 /* Debug */,
+                RELEASEBUILDCONFIGID123 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = "Release";
+        };
+/* End XCConfigurationList section */
+
+/* Begin PBXGroup section */
+        MAINGROUPID123456 = {
+            isa = PBXGroup;
+            children = (
+                PRODUCTSGROUPID1234 /* Products */,
+                SOURCESGROUPID123456 /* Sources */,
+                FRAMEWORKSGROUPID123456 /* Frameworks */,
+                RESOURCESGROUPID123456 /* Resources */,
+            );
+            sourceTree = "<group>";
+        };
+        PRODUCTSGROUPID1234 /* Products */ = {
+            isa = PBXGroup;
+            children = (
+                PRODUCTID123456789 /* GlobalExpenseTracker.app */,
+            );
+            name = "Products";
+            sourceTree = "<group>";
+        };
+        SOURCESGROUPID123456 /* Sources */ = {
+            isa = PBXGroup;
+            children = (
+                FILE_REF_APPDELEGATE /* AppDelegate.swift */,
+            );
+            name = "Sources";
+            sourceTree = "<group>";
+            /* Includes source files such as 'AppDelegate.swift' as per internal dependencies in the specification */
+        };
+        FRAMEWORKSGROUPID123456 /* Frameworks */ = {
+            isa = PBXGroup;
+            children = (
+                FILE_REF_REACT /* React.framework */,
+                FILE_REF_REACT_NATIVE /* ReactNative.framework */,
+            );
+            name = "Frameworks";
+            sourceTree = "<group>";
+            /* Includes external dependencies 'React' and 'React Native', versions specified in the specification */
+        };
+        RESOURCESGROUPID123456 /* Resources */ = {
+            isa = PBXGroup;
+            children = (
+                FILE_REF_INFO_PLIST /* Info.plist */,
+                FILE_REF_APPICON /* AppIcon.appiconset */,
+            );
+            name = "Resources";
+            sourceTree = "<group>";
+            /* Includes resources such as 'Info.plist' and 'AppIcon.appiconset' as per internal dependencies in the specification */
+        };
+/* End PBXGroup section */
+
+/* Begin PBXFileReference section */
+        PRODUCTID123456789 /* GlobalExpenseTracker.app */ = {
+            isa = PBXFileReference;
+            explicitFileType = "wrapper.application";
+            includeInIndex = 0;
+            path = "GlobalExpenseTracker.app";
+            sourceTree = "BUILT_PRODUCTS_DIR";
+        };
+/* End PBXFileReference section */
+
+/* Begin PBXBuildFile section */
+        BUILD_FILE_REACT /* React.framework */ = {
+            isa = PBXBuildFile;
+            fileRef = FILE_REF_REACT /* React.framework */;
+            /* External dependency 'React' version 0.64.0 included here to integrate React Native components, as per dependencies in the specification */
+        };
+        BUILD_FILE_REACT_NATIVE /* ReactNative.framework */ = {
+            isa = PBXBuildFile;
+            fileRef = FILE_REF_REACT_NATIVE /* ReactNative.framework */;
+            /* External dependency 'React Native' version 0.64.0 included here to build the mobile application, as per dependencies in the specification */
+        };
+/* End PBXBuildFile section */
+
+/* Begin PBXFrameworksBuildPhase section */
+        FRAMEWORKSBUILDPHASEID123 /* Frameworks */ = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                BUILD_FILE_REACT /* React.framework */,
+                BUILD_FILE_REACT_NATIVE /* ReactNative.framework */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+            /* Frameworks build phase includes 'React' and 'React Native' frameworks, as per dependencies */
+        };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXFileReference section */
+        FILE_REF_REACT /* React.framework */ = {
+            isa = PBXFileReference;
+            lastKnownFileType = wrapper.framework;
+            name = "React.framework";
+            path = "Frameworks/React.framework";
+            sourceTree = "<group>";
+            /* React.framework file reference; version 0.64.0 specified in dependencies */
+        };
+        FILE_REF_REACT_NATIVE /* ReactNative.framework */ = {
+            isa = PBXFileReference;
+            lastKnownFileType = wrapper.framework;
+            name = "ReactNative.framework";
+            path = "Frameworks/ReactNative.framework";
+            sourceTree = "<group>";
+            /* ReactNative.framework file reference; version 0.64.0 specified in dependencies */
+        };
+/* End PBXFileReference section */
+
+/* Begin PBXResourcesBuildPhase section */
+        RESOURCESBUILDPHASEID123 /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                BUILD_FILE_INFO_PLIST /* Info.plist */,
+                BUILD_FILE_APPICON /* AppIcon.appiconset */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+            /* Resources build phase includes 'Info.plist' and 'AppIcon.appiconset' as specified in internal dependencies */
+        };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXBuildFile section */
+        BUILD_FILE_INFO_PLIST /* Info.plist */ = {
+            isa = PBXBuildFile;
+            fileRef = FILE_REF_INFO_PLIST /* Info.plist */;
+            /* 'Info.plist' contains configuration and metadata for the iOS application, as per internal dependencies */
+        };
+        BUILD_FILE_APPICON /* AppIcon.appiconset */ = {
+            isa = PBXBuildFile;
+            fileRef = FILE_REF_APPICON /* AppIcon.appiconset */;
+            /* 'AppIcon.appiconset' specifies app icon sizes and scales for different devices, as per internal dependencies */
+        };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+        FILE_REF_INFO_PLIST /* Info.plist */ = {
+            isa = PBXFileReference;
+            lastKnownFileType = text.plist.xml;
+            name = "Info.plist";
+            path = "Info.plist";
+            sourceTree = "<group>";
+        };
+        FILE_REF_APPICON /* AppIcon.appiconset */ = {
+            isa = PBXFileReference;
+            lastKnownFileType = folder.assetcatalog;
+            name = "AppIcon.appiconset";
+            path = "Assets.xcassets/AppIcon.appiconset";
+            sourceTree = "<group>";
+        };
+/* End PBXFileReference section */
+
+/* Begin PBXSourcesBuildPhase section */
+        SOURCESBUILDPHASEID123 /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                BUILD_FILE_APPDELEGATE /* AppDelegate.swift */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+            /* Sources build phase includes 'AppDelegate.swift' for application lifecycle events and React Native integration, as per internal dependencies */
+        };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXBuildFile section */
+        BUILD_FILE_APPDELEGATE /* AppDelegate.swift */ = {
+            isa = PBXBuildFile;
+            fileRef = FILE_REF_APPDELEGATE /* AppDelegate.swift */;
+            /* 'AppDelegate.swift' handles application lifecycle events and integrates React Native, as per internal dependencies */
+        };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+        FILE_REF_APPDELEGATE /* AppDelegate.swift */ = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = "AppDelegate.swift";
+            path = "AppDelegate.swift";
+            sourceTree = "<group>";
+        };
+/* End PBXFileReference section */
+
+    };
+    rootObject = PROJECTID123456789 /* Project object */;
+}
