@@ -1,0 +1,95 @@
+{
+  // TypeScript configuration for the Approval Workflow Service
+  // This file defines the compiler options and paths for TypeScript files within the service.
+  // Addresses Requirements:
+  // - Name: Approval Workflow
+  // - Location: Technical Specification/13.4 Approval Workflow
+  // - Description: Streamline the approval process for submitted expense reports with configurable workflows, batch processing, and delegation capabilities.
+
+  "compilerOptions": {
+    // Target ECMAScript 2020 to support modern JavaScript features required for advanced approval workflows.
+    "target": "ES2020",
+
+    // Use CommonJS module system compatible with Node.js environment.
+    "module": "commonjs",
+
+    // Enable all strict type-checking options to ensure code reliability.
+    "strict": true,
+
+    // Do not allow JavaScript files to be compiled; enforce TypeScript usage for type safety.
+    "allowJs": false,
+
+    // Base directory for resolving non-relative module names.
+    "baseUrl": "./",
+
+    // Paths mapping for module resolution to simplify imports.
+    // Facilitates modular development as per the requirement for configurable workflows.
+    "paths": {
+      // Simplify importing models like 'ApprovalModel'.
+      "models/*": ["src/models/*"],
+
+      // Simplify importing utilities like 'notificationService'.
+      "utils/*": ["src/utils/*"],
+
+      // Simplify importing middlewares like 'authMiddleware'.
+      "middlewares/*": ["src/middlewares/*"],
+
+      // Simplify importing services like 'approvalService'.
+      "services/*": ["src/services/*"],
+
+      // Simplify importing controllers like 'approvalController'.
+      "controllers/*": ["src/controllers/*"],
+
+      // Simplify importing routes like 'approvalRoutes'.
+      "routes/*": ["src/routes/*"]
+    },
+
+    // Use Node.js module resolution algorithm.
+    "moduleResolution": "node",
+
+    // Enable source maps for debugging TypeScript code during development.
+    "sourceMap": true,
+
+    // Remove comments in the emitted JavaScript code to protect code comments in production.
+    "removeComments": true,
+
+    // Enable interoperability between CommonJS and ES modules.
+    "esModuleInterop": true,
+
+    // Output directory for compiled JavaScript files.
+    "outDir": "dist",
+
+    // Generate declaration files to facilitate type checking when consumed by other modules.
+    "declaration": true,
+
+    // Enable experimental support for decorators, used in models or services.
+    "experimentalDecorators": true,
+
+    // Import emit helpers from 'tslib' to reduce code duplication.
+    "importHelpers": true,
+
+    // Enable incremental compilation to speed up subsequent builds.
+    "incremental": true,
+
+    // Specify the root directory of input files.
+    "rootDir": "src",
+
+    // Enforce consistent casing in module names.
+    "forceConsistentCasingInFileNames": true,
+
+    // Enable strict null checks to prevent null or undefined errors.
+    "strictNullChecks": true,
+
+    // Do not process JSX files.
+    "jsx": "none"
+  },
+  // Include all TypeScript files in the 'src' directory.
+  "include": ["src/**/*"],
+  // Exclude node_modules and output directories to prevent recompilation.
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "**/*.spec.ts"
+  ]
+}
