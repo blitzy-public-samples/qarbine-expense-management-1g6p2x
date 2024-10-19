@@ -1,0 +1,227 @@
+/* ExpenseForm.css */
+
+/* This stylesheet defines the styles for the ExpenseForm component used in the expense submission process. */
+/* It addresses the requirements for a user-friendly web interface as described in: */
+/* Technical Specification/13.2 Expense Submission */
+
+/* Form Container Styles */
+/* The .form-container class styles the main container of the expense form, providing a flexible column layout and padding for consistent spacing. */
+
+/* Requirement Addressed: 
+   - Provide a user-friendly interface for expense submission (Technical Specification/13.2 Expense Submission)
+*/
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Input Field Styles */
+/* The .input-field class styles the input elements in the form, with consistent margin, padding, border, and rounded corners for a neat appearance. */
+
+/* Requirement Addressed:
+   - Ensure input fields are user-friendly and accessible for efficient data entry (Technical Specification/13.2 Expense Submission)
+*/
+
+.input-field {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Submit Button Styles */
+/* The .submit-button class styles the submit button, with a green background color, white text, padding, no border, rounded corners, and a pointer cursor. */
+
+/* Requirement Addressed:
+   - Provide a clear and accessible submit option for users to submit their expenses efficiently (Technical Specification/13.2 Expense Submission)
+*/
+
+.submit-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Submit Button Hover Effect */
+/* The .submit-button:hover style changes the background color on hover to provide visual feedback to the user. */
+
+/* Requirement Addressed:
+   - Enhance user experience with interactive elements (Technical Specification/13.2 Expense Submission)
+*/
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+/* Media queries for responsive design to ensure the form is user-friendly on various screen sizes, addressing the need for mobile and web interfaces. */
+
+/* Requirement Addressed:
+   - Provide a responsive interface suitable for both mobile and web platforms (Technical Specification/13.2 Expense Submission, TR-F002.1) */
+
+@media screen and (max-width: 600px) {
+    .form-container {
+        padding: 10px;
+    }
+
+    .input-field {
+        padding: 8px;
+    }
+
+    .submit-button {
+        padding: 12px 15px;
+    }
+}
+
+/* Error Message Styles */
+/* The .error-message class styles error messages for form validation, ensuring users are aware of any issues with their input. */
+
+/* Requirement Addressed:
+   - Provide clear validation feedback to users (Technical Specification/13.2 Expense Submission) */
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* Required Field Indicator */
+/* The .required-field class adds a red asterisk to required fields to indicate mandatory input. */
+
+/* Requirement Addressed:
+   - Guide users to complete necessary fields for successful expense submission (Technical Specification/13.2 Expense Submission) */
+
+.required-field::after {
+    content: "*";
+    color: red;
+    margin-left: 5px;
+}
+
+/* Date Picker Styles */
+/* The .date-picker class styles date input fields for consistency with other input fields. */
+
+/* Requirement Addressed:
+   - Ensure date fields are user-friendly (Technical Specification/13.2 Expense Submission) */
+
+.date-picker {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Select Dropdown Styles */
+/* The .select-field class styles select dropdowns for category selection, matching input field styles. */
+
+/* Requirement Addressed:
+   - Provide intuitive selection options for expense categories (Technical Specification/13.2 Expense Submission, TR-F002.5) */
+
+.select-field {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+}
+
+/* Receipt Upload Button Styles */
+/* The .upload-button class styles the receipt upload button, ensuring it's prominent and user-friendly. */
+
+/* Requirement Addressed:
+   - Allow attachment of digital receipts (Technical Specification/13.2 Expense Submission, TR-F002.4) */
+
+.upload-button {
+    background-color: #008CBA; /* Blue background */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.upload-button:hover {
+    background-color: #007B9E;
+}
+
+/* Currency Input Styles */
+/* The .currency-field class styles currency input fields, essential for multi-currency support. */
+
+/* Requirement Addressed:
+   - Support multiple currencies with real-time conversion (Technical Specification/13.2 Expense Submission, TR-F002.3) */
+
+.currency-field {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+}
+
+.currency-field::before {
+    content: attr(data-currency-symbol);
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+}
+
+.currency-input {
+    padding-left: 25px; /* Adjust padding to account for currency symbol */
+}
+
+/* Offline Mode Indicator */
+/* The .offline-indicator class styles an indicator when the user is offline. */
+
+/* Requirement Addressed:
+   - Provide an offline mode indicator (Technical Specification/13.2 Expense Submission, TR-F002.8) */
+
+.offline-indicator {
+    background-color: #ff9800; /* Orange background */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Tooltip Styles */
+/* The .tooltip class styles helper text for form fields, enhancing user understanding. */
+
+/* Requirement Addressed:
+   - Improve user experience with informative guidance (Technical Specification/13.2 Expense Submission) */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: left;
+    padding: 8px;
+    border-radius: 6px;
+
+    /* Positioning */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the element */
+    left: 50%;
+    margin-left: -100px;
+
+    /* Fade-in effect */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
