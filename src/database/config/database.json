@@ -1,0 +1,50 @@
+{
+  "development": {
+    "client": "pg",
+    "connection": {
+      "host": "localhost",
+      "port": 5432,
+      "user": "dev_user",
+      "password": "dev_password",
+      "database": "expense_tracking_dev"
+    },
+    "migrations": {
+      "directory": "./migrations"
+    },
+    "seeds": {
+      "directory": "./seeds"
+    }
+  },
+  "staging": {
+    "client": "pg",
+    "connection": {
+      "host": "staging-db-host",
+      "port": 5432,
+      "user": "staging_user",
+      "password": "staging_password",
+      "database": "expense_tracking_staging"
+    },
+    "migrations": {
+      "directory": "./migrations"
+    },
+    "seeds": {
+      "directory": "./seeds"
+    }
+  },
+  "production": {
+    "client": "pg",
+    "connection": {
+      "host": "production-db-host",
+      "port": 5432,
+      "user": "prod_user",
+      "password": "prod_password",
+      "database": "expense_tracking_prod"
+    },
+    "migrations": {
+      "directory": "./migrations"
+    },
+    "seeds": {
+      "directory": "./seeds"
+    }
+  }
+}
