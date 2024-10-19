@@ -1,0 +1,235 @@
+# Continuous Integration Workflow for Global Employee Travel Expense Tracking App
+# This workflow automates the process of building, testing, and validating the codebase across different services and components.
+# Requirements Addressed:
+# - Name: Continuous Integration and Deployment
+# - Location: Technical Specification/Deployment Architecture/CI/CD Pipeline
+# - Description: Automates the build, testing, and deployment processes to ensure rapid and reliable delivery of updates.
+
+name: CI
+
+on:
+  # Triggers the CI workflow on every push to the repository
+  push:
+    branches: [ '**' ]
+  # Triggers the CI workflow on every pull request to the main branch
+  pull_request:
+    branches: [ 'main' ]
+
+env:
+  # Global environment variable set to 'test' as specified in the JSON schema
+  NODE_ENV: test
+
+jobs:
+  build:
+    # Job: Build
+    # Description: Builds the application and installs dependencies.
+    # Addresses Requirements:
+    # - Automates the build process for all services.
+    # - Location: Technical Specification/Deployment Architecture/CI/CD Pipeline
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        # Step: Checkout the repository code.
+        # Uses GitHub Actions checkout@v2 to pull code from the repository.
+        # External Dependency: GitHub Actions v2
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        # Step: Set up Node.js environment for building the application.
+        # Node.js version 14.x is used as specified.
+        # External Dependency: Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+
+      - name: Install root dependencies
+        # Step: Install root-level npm dependencies.
+        run: npm install
+
+      - name: Build Authentication Service
+        # Step: Run build scripts for the Authentication Service.
+        # Internal Dependency: authService (src/backend/authentication-service/src/services/authService.ts)
+        # Purpose: Handles authentication logic including user registration and login.
+        run: |
+          cd src/backend/authentication-service
+          npm install
+          npm run build
+          cd ../../..
+
+      - name: Build Expense Management Service
+        # Step: Run build scripts for the Expense Management Service.
+        # Internal Dependency: expenseService (src/backend/expense-management-service/src/services/expenseService.ts)
+        # Purpose: Manages expense operations including creation, updating, and validation.
+        run: |
+          cd src/backend/expense-management-service
+          npm install
+          npm run build
+          cd ../../..
+
+      - name: Build Approval Workflow Service
+        # Step: Run build scripts for the Approval Workflow Service.
+        # Internal Dependency: approvalService (src/backend/approval-workflow-service/src/services/approvalService.ts)
+        # Purpose: Manages approval workflows for expense reports.
+        run: |
+          cd src/backend/approval-workflow-service
+          npm install
+          npm run build
+          cd ../../..
+
+      - name: Build Reimbursement Processing Service
+        # Step: Run build scripts for the Reimbursement Processing Service.
+        # Internal Dependency: reimbursementService (src/backend/reimbursement-processing-service/src/services/reimbursementService.ts)
+        # Purpose: Processes reimbursements and integrates with payment systems.
+        run: |
+          cd src/backend/reimbursement-processing-service
+          npm install
+          npm run build
+          cd ../../..
+
+      - name: Build Reporting and Analytics Service
+        # Step: Run build scripts for the Reporting and Analytics Service.
+        # Internal Dependency: reportService (src/backend/reporting-analytics-service/src/services/reportService.ts)
+        # Purpose: Generates and manages reports for analytics.
+        run: |
+          cd src/backend/reporting-analytics-service
+          npm install
+          npm run build
+          cd ../../..
+
+      - name: Build Web Application
+        # Step: Run build scripts for the Web Application.
+        run: |
+          cd src/web
+          npm install
+          npm run build
+          cd ..
+
+  test:
+    # Job: Test
+    # Description: Runs unit and integration tests across all services.
+    # Addresses Requirements:
+    # - Ensures code quality through automated testing.
+    # - Location: Technical Specification/Deployment Architecture/CI/CD Pipeline
+    name: Test
+    needs: build
+    runs-on: ubuntu-latest
+    env:
+      NODE_ENV: test
+    steps:
+      - name: Checkout code
+        # Step: Checkout the repository code.
+        # Uses GitHub Actions checkout@v2.
+        # External Dependency: GitHub Actions v2
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        # Step: Set up Node.js environment.
+        # External Dependency: Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+
+      - name: Install root dependencies
+        # Step: Install root-level npm dependencies.
+        run: npm install
+
+      - name: Run Tests - Authentication Service
+        # Step: Run Jest tests for Authentication Service.
+        # External Dependencies:
+        # - Jest v27.0.6: Testing framework for running unit tests.
+        # - Supertest v6.1.3: HTTP assertions for testing Express.js routes.
+        run: |
+          cd src/backend/authentication-service
+          npm install
+          npm test
+          cd ../../..
+
+      - name: Run Tests - Expense Management Service
+        # Step: Run Jest tests for Expense Management Service.
+        # External Dependencies:
+        # - Jest v27.0.6
+        # - Supertest v6.1.3
+        run: |
+          cd src/backend/expense-management-service
+          npm install
+          npm test
+          cd ../../..
+
+      - name: Run Tests - Approval Workflow Service
+        # Step: Run Jest tests for Approval Workflow Service.
+        # External Dependencies:
+        # - Jest v27.0.6
+        # - Supertest v6.1.3
+        run: |
+          cd src/backend/approval-workflow-service
+          npm install
+          npm test
+          cd ../../..
+
+      - name: Run Tests - Reimbursement Processing Service
+        # Step: Run Jest tests for Reimbursement Processing Service.
+        # External Dependencies:
+        # - Jest v27.0.6
+        # - Supertest v6.1.3
+        run: |
+          cd src/backend/reimbursement-processing-service
+          npm install
+          npm test
+          cd ../../..
+
+      - name: Run Tests - Reporting and Analytics Service
+        # Step: Run Jest tests for Reporting and Analytics Service.
+        # External Dependencies:
+        # - Jest v27.0.6
+        # - Supertest v6.1.3
+        run: |
+          cd src/backend/reporting-analytics-service
+          npm install
+          npm test
+          cd ../../..
+
+      - name: Run Tests - Web Application
+        # Step: Run Jest tests for the Web Application.
+        run: |
+          cd src/web
+          npm install
+          npm test
+          cd ..
+
+  lint:
+    # Job: Lint
+    # Description: Checks code quality and style using ESLint.
+    # Addresses Requirements:
+    # - Ensures code adheres to defined style guidelines.
+    # - Location: Technical Specification/Deployment Architecture/CI/CD Pipeline
+    name: Lint
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        # Step: Checkout the repository code.
+        # Uses GitHub Actions checkout@v2.
+        # External Dependency: GitHub Actions v2
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        # Step: Set up Node.js environment.
+        # External Dependency: Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+
+      - name: Install root dependencies
+        # Step: Install root-level npm dependencies.
+        run: npm install
+
+      - name: Run ESLint
+        # Step: Run ESLint across all JavaScript and TypeScript files.
+        run: |
+          npx eslint 'src/**/*.js' 'src/**/*.jsx' 'src/**/*.ts' 'src/**/*.tsx'
+
+      - name: Check Code Style with Prettier
+        # Step: Ensure code adheres to Prettier style guidelines.
+        run: |
+          npx prettier --check 'src/**/*.js' 'src/**/*.jsx' 'src/**/*.ts' 'src/**/*.tsx'
