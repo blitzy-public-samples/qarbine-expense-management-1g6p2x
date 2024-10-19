@@ -1,0 +1,73 @@
+/* 
+ * Styles for the main header container.
+ * 
+ * Addressed Requirements:
+ * - Improve User Experience (Technical Specification/1.3 System Objectives)
+ *   - Deliver an intuitive and user-friendly interface across web and mobile platforms for all user roles.
+ * - Consistency and Standards (Technical Specification/USER INTERFACE DESIGN/3. Consistency and Standards)
+ *   - Utilize the same color schemes, typography, and iconography across web and mobile platforms to ensure a unified user experience.
+ * 
+ * Ensures the header is responsive and visually aligned with the application's theme, contributing to a consistent and intuitive user interface.
+ */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 
+ * Styles the logo within the header.
+ * 
+ * Addressed Requirement:
+ * - Improve User Experience (Technical Specification/1.3 System Objectives)
+ * 
+ * Ensures the logo is properly sized and positioned, enhancing brand visibility and facilitating easy navigation.
+ */
+.header-logo {
+    height: 40px;
+    cursor: pointer;
+}
+
+/* 
+ * Styles the navigation links in the header.
+ * 
+ * Addressed Requirement:
+ * - Improve User Experience (Technical Specification/1.3 System Objectives)
+ * 
+ * Displays navigation links inline and makes them easily accessible, enhancing user navigation.
+ */
+.header-nav {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+/* 
+ * Styles the individual navigation links.
+ * 
+ * Addressed Requirement:
+ * - Improve User Experience (Technical Specification/1.3 System Objectives)
+ * 
+ * Ensures navigation links are visually distinct and interactive, contributing to a better user experience.
+ */
+.header-nav a {
+    color: #333333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* 
+ * Defines the hover state for navigation links.
+ * 
+ * Addressed Requirement:
+ * - Improve User Experience (Technical Specification/1.3 System Objectives)
+ * 
+ * Enhances user interaction by changing the link color on hover.
+ */
+.header-nav a:hover {
+    color: #0070f3;
+}
