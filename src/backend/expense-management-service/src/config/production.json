@@ -1,0 +1,42 @@
+{
+  // Production environment configuration settings for the Expense Management Service.
+  // Manages the core functionalities of expense submission, receipt processing, and policy enforcement.
+  // See: Technical Specification/System Architecture/API Layer/Expense Management Service
+
+  // Port on which the Expense Management Service runs in production.
+  // Requirement Addressed: Supports high availability through standardized port configuration.
+  // Location: Technical Specification/System Architecture/Deployment Architecture
+  "PORT": "80",
+
+  // Production database host.
+  // Requirement Addressed: Connects to the production database server for data storage.
+  // Location: Technical Specification/2.3 Data Layer
+  "DB_HOST": "prod-db-server",
+
+  // Production database port.
+  "DB_PORT": "5432",
+
+  // Production database name.
+  "DB_NAME": "expense_management_prod",
+
+  // Production database user.
+  "DB_USER": "prod_user",
+
+  // Production database password.
+  // Note: Ensure secure handling of credentials as per security best practices.
+  // Requirement Addressed: Secure data access.
+  // Location: Technical Specification/Security Considerations/Data Security
+  "DB_PASSWORD": "prod_password",
+
+  // JWT secret key for signing authentication tokens in production.
+  // Requirement Addressed: TR-F001.1 - Implement secure login process with multi-factor authentication (MFA).
+  // Ensures the integrity and security of authentication tokens.
+  // Location: Technical Specification/13.1 User Authentication and Authorization
+  "JWT_SECRET": "prod_jwt_secret",
+
+  // Log level for minimal logging in production environment.
+  // Requirement Addressed: Configure application logging level.
+  // Setting to 'error' to log only errors in production for performance optimization.
+  // Location: Technical Specification/System Components/Logging and Monitoring
+  "LOG_LEVEL": "error"
+}
