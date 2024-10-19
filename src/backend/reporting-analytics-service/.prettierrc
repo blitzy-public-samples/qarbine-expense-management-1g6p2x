@@ -1,0 +1,40 @@
+// Configuration file for Prettier, a code formatter used to enforce consistent code style across the Reporting and Analytics Service.
+
+// Requirements Addressed:
+// - **Code Quality and Consistency**
+//   - *Location:* Technical Specification/Development Practices/Code Quality
+//   - *Description:* Ensure consistent code style and formatting across the codebase to improve readability and maintainability.
+
+// Dependencies:
+// - External:
+//   - **prettier@^2.3.2**
+//     - Purpose: Formats code to adhere to specified style guidelines.
+
+module.exports = {
+  // Set the maximum line width to 80 characters to enhance code readability.
+  printWidth: 80,
+
+  // Use a tab width of 2 spaces for indentation to maintain consistency.
+  tabWidth: 2,
+
+  // Indent lines with spaces rather than tabs to ensure uniform formatting.
+  useTabs: false,
+
+  // Add semicolons at the ends of statements to prevent potential errors.
+  semi: true,
+
+  // Use single quotes in strings for consistency across the codebase.
+  singleQuote: true,
+
+  // Include trailing commas where valid in ES5 (objects, arrays, etc.) for cleaner diffs.
+  trailingComma: 'es5',
+
+  // Print spaces between brackets in object literals for improved readability.
+  bracketSpacing: true,
+
+  // Place the closing bracket of JSX elements on a new line for better clarity.
+  jsxBracketSameLine: false,
+
+  // Omit parentheses when arrow functions have a single parameter for conciseness.
+  arrowParens: 'avoid',
+};
