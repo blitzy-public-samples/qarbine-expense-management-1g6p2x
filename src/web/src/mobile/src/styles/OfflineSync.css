@@ -1,0 +1,98 @@
+/* OfflineSync.css */
+
+/*
+ * This stylesheet defines styles for the OfflineSync component,
+ * which allows users to enter expenses offline and sync them when online.
+ * 
+ * Requirements Addressed:
+ * - TR-F002.8: Provide an offline mode for expense entry when internet connection is unavailable.
+ *   Location: Technical Specification > 13.2 Expense Submission
+ * - TR-F008.3: Provide offline mode with data synchronization when online.
+ *   Location: Technical Specification > 13.8 Mobile Features
+ */
+
+/* Container for the offline sync notification */
+/*
+ * Styles the container that holds the offline sync message and actions.
+ * Positioned at the bottom to be always visible to the user when offline.
+ */
+.offline-sync-container {
+    position: fixed;           /* Fixes the container position relative to the viewport */
+    bottom: 0;                 /* Aligns the container to the bottom of the viewport */
+    width: 100%;               /* Makes the container span the full width of the screen */
+    background-color: #f8d7da; /* Sets a light red background to indicate attention is needed */
+    padding: 10px;             /* Adds padding inside the container for spacing */
+    text-align: center;        /* Centers the text and elements inside the container */
+    z-index: 1000;             /* Ensures the container appears above other elements */
+}
+
+/* Text within the offline sync notification */
+/*
+ * Styles the text message informing the user about offline status and syncing options.
+ */
+.offline-sync-text {
+    color: #721c24;            /* Uses a dark red color for high contrast against the background */
+    font-size: 16px;           /* Sets a readable font size */
+    font-weight: bold;         /* Makes the text bold to draw attention */
+}
+
+/* Sync button within the offline sync component */
+/*
+ * Styles the button that triggers synchronization of offline data when the user is back online.
+ */
+.offline-sync-button {
+    margin-top: 10px;          /* Adds space above the button to separate it from the text */
+    padding: 8px 16px;         /* Adds padding inside the button for better click area */
+    background-color: #28a745; /* Sets a green background to indicate a positive action */
+    color: #ffffff;            /* Sets text color to white for contrast against the green background */
+    border: none;              /* Removes default button borders */
+    border-radius: 4px;        /* Rounds the corners of the button */
+    font-size: 16px;           /* Sets the font size for the button text */
+    cursor: pointer;           /* Changes cursor to pointer on hover to indicate clickable element */
+}
+
+/* Disabled state for the sync button */
+/*
+ * Styles the sync button when it is disabled, such as when there is no internet connection.
+ */
+.offline-sync-button:disabled {
+    background-color: #6c757d; /* Changes background to grey when disabled */
+    color: #ffffff;            /* Keeps text color white */
+    cursor: not-allowed;       /* Changes cursor to indicate the button is not clickable */
+}
+
+/* Animation for the syncing icon */
+/*
+ * Defines a rotation animation for an icon to indicate syncing is in progress.
+ */
+@keyframes sync-rotation {
+    from {
+        transform: rotate(0deg);   /* Starts rotation from 0 degrees */
+    }
+    to {
+        transform: rotate(360deg); /* Rotates to 360 degrees */
+    }
+}
+
+/* Applies the rotation animation to the syncing icon */
+/*
+ * This class is added to the sync icon when syncing is in progress to show rotation.
+ */
+.offline-sync-icon-syncing {
+    animation: sync-rotation 2s infinite linear; /* Applies the rotation animation infinitely */
+}
+
+/* Media query for responsive design */
+/*
+ * Ensures the offline sync component displays correctly on different screen sizes.
+ */
+@media (max-width: 600px) {
+    .offline-sync-text {
+        font-size: 14px;           /* Decreases font size on smaller screens */
+    }
+    
+    .offline-sync-button {
+        font-size: 14px;           /* Decreases button font size on smaller screens */
+        padding: 6px 12px;         /* Reduces padding for smaller buttons */
+    }
+}
