@@ -1,0 +1,33 @@
+{
+  // Default configuration for the Reporting and Analytics Service
+  // This configuration serves as a base and can be extended by environment-specific configurations.
+  // Requirement Addressed: Comprehensive Reporting and Analytics
+  // Location: Technical Specification/13.6 Reporting and Analytics
+
+  // Database configuration
+  // Purpose: Interacts with MongoDB to fetch and store aggregated report data.
+  // Depends on external dependency 'mongoose' version '^5.10.9'
+  // See: Technical Specification/System Architecture/Data Layer
+  "database": {
+    "host": "default-db-host",
+    "port": 27017,
+    "name": "reporting_db"
+  },
+
+  // Authentication configuration
+  // Purpose: Ensures secure access to the reporting service by enforcing authentication and authorization.
+  // Uses 'authMiddleware' from 'src/middlewares/authMiddleware.ts'
+  // Depends on external dependency 'jsonwebtoken' version '^8.5.1' for verifying JWT tokens.
+  // See: Technical Specification/13.1 User Authentication and Authorization
+  "auth": {
+    "jwtSecret": "your_default_jwt_secret",
+    "tokenExpiry": "1h"
+  },
+
+  // Services configuration
+  // Purpose: Defines the endpoint for the report service.
+  // This is used by internal components to access reporting functionalities.
+  "services": {
+    "reportServiceEndpoint": "http://default.api.yourdomain.com/api/reports"
+  }
+}
