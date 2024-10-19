@@ -1,0 +1,102 @@
+{
+  "//": "Production configuration for Approval Workflow Service",
+  "database": {
+    "//": "MongoDB connection string for production environment (global variable 'databaseConnection')",
+    "connectionString": "mongodb+srv://production_user:production_password@cluster0.mongodb.net/approval_workflow?retryWrites=true&w=majority",
+    "options": {
+      "useNewUrlParser": true,
+      "useUnifiedTopology": true
+    }
+  },
+  "logging": {
+    "//": "Logging level set to 'INFO' as per global variable 'logLevel'",
+    "level": "info",
+    "file": "/var/log/approval-workflow-service/production.log",
+    "format": "combined"
+  },
+  "emailService": {
+    "//": "Configured email service instance for sending notifications (global variable 'emailService') using Nodemailer v6.6.3",
+    "service": "smtp",
+    "host": "smtp.production-email.com",
+    "port": 587,
+    "secure": false,
+    "auth": {
+      "user": "no-reply@company.com",
+      "pass": "securepassword"
+    }
+  },
+  "jwt": {
+    "//": "JWT settings using 'jsonwebtoken' v8.5.1 for authentication",
+    "secret": "your_production_jwt_secret",
+    "expiresIn": "1h"
+  },
+  "approvalWorkflow": {
+    "//": "Approval workflow configurations addressing 'Approval Workflow' requirements (Technical Specification/13.4 Approval Workflow)",
+    "multiLevelApproval": true,
+    "maxApprovalLevels": 5,
+    "batchProcessing": {
+      "enabled": true,
+      "maxBatchSize": 20
+    },
+    "delegation": {
+      "enabled": true,
+      "maxDelegationDepth": 2
+    }
+  },
+  "services": {
+    "notificationService": {
+      "//": "Settings for 'sendApprovalNotification' function in 'notificationService.ts'",
+      "emailNotifications": true,
+      "smsNotifications": false
+    },
+    "policyCompliance": {
+      "//": "Integration with policy engine for compliance checks (related to 'policyValidator.ts')",
+      "endpoint": "https://policy-service.company.com/api/v1/check",
+      "apiKey": "production_policy_service_api_key"
+    }
+  },
+  "middleware": {
+    "authentication": {
+      "//": "Middleware 'authenticateRequest' from 'authMiddleware.ts' to ensure requests are authenticated",
+      "enabled": true
+    },
+    "authorization": {
+      "//": "Middleware 'authorizeRequest' from 'authMiddleware.ts' to ensure requests are authorized based on user roles",
+      "enabled": true
+    }
+  },
+  "dependencies": {
+    "mongoose": {
+      "//": "Used for interacting with MongoDB to manage approval data (version 5.13.8)",
+      "version": "5.13.8"
+    },
+    "nodemailer": {
+      "//": "Used for sending email notifications (version 6.6.3)",
+      "version": "6.6.3"
+    },
+    "jsonwebtoken": {
+      "//": "Used for handling JSON Web Tokens for authentication (version 8.5.1)",
+      "version": "8.5.1"
+    }
+  },
+  "externalApis": {
+    "//": "External service integrations required in production",
+    "taxService": {
+      "endpoint": "https://api.production-tax-service.com/v1",
+      "apiKey": "production_tax_service_api_key"
+    },
+    "currencyExchange": {
+      "endpoint": "https://api.production-currency-exchange.com/v1",
+      "apiKey": "production_currency_exchange_api_key"
+    }
+  },
+  "settings": {
+    "//": "Additional settings as per production requirements",
+    "enableSSL": true,
+    "sessionTimeout": 3600,
+    "allowedOrigins": [
+      "https://app.company.com",
+      "https://admin.company.com"
+    ]
+  }
+}
