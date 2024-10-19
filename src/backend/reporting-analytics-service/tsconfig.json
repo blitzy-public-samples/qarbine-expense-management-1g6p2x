@@ -1,0 +1,64 @@
+{
+  // tsconfig.json for the Reporting and Analytics Service
+  // This configuration sets up the TypeScript environment for the service,
+  // ensuring proper compilation and type-checking of TypeScript code.
+
+  // Addresses requirement: 'Comprehensive Reporting and Analytics'
+  // Location: Technical Specification/13.6 Reporting and Analytics
+  // Ensures that the service can provide comprehensive reporting and analytical tools
+  // for tracking, managing, and forecasting expenses, tailored to different user roles.
+
+  "compilerOptions": {
+    // Specify ECMAScript target version: 'ES6' allows usage of modern JavaScript features necessary for advanced analytics
+    "target": "ES6",
+
+    // Use 'commonjs' module system: compatible with Node.js and the backend's module resolution strategy
+    "module": "commonjs",
+
+    // Enable all strict type-checking options: 'true' ensures type safety and reduces runtime errors,
+    // critical for reliable data processing in reporting and analytics
+    "strict": true,
+
+    // Enable interoperability between CommonJS and ES Modules: required for seamless integration with external dependencies
+    // such as 'mongoose' (^5.10.9), 'jsonwebtoken' (^8.5.1), and 'express' (^4.17.1)
+    "esModuleInterop": true,
+
+    // Skip type checking of all declaration files (*.d.ts): improves build performance without impacting the reliability of our service
+    "skipLibCheck": true,
+
+    // Ensure consistent casing in file names: prevents issues during module resolution in different file systems,
+    // maintaining consistency across development environments
+    "forceConsistentCasingInFileNames": true,
+
+    // Output directory for compiled JavaScript files: './dist' keeps build artifacts separate from source code,
+    // aligning with best practices for deployment
+    "outDir": "./dist",
+
+    // Root directory of source files: './src' ensures that the TypeScript compiler knows where to find the input files,
+    // allowing for accurate compilation and type checking
+    "rootDir": "./src",
+
+    // Base directory to resolve non-relative module names: './' allows us to use absolute imports based on the project root,
+    // facilitating cleaner and more maintainable import statements
+    "baseUrl": "./",
+
+    // Configure module resolution paths: maps module names to specific paths, enabling the use of aliases
+    "paths": {
+      // Redirect module requests to appropriate directories
+      "*": [
+        "node_modules/*",  // For resolving third-party modules
+        "src/types/*"      // For custom type definitions
+      ]
+    }
+  },
+  // Include all TypeScript source files in the 'src' directory for compilation
+  "include": [
+    "src/**/*"
+  ],
+  // Exclude directories that contain generated files or tests, which should not be compiled
+  "exclude": [
+    "node_modules",  // Dependencies are already compiled
+    "dist",          // Output directory for compiled files
+    "tests"          // Test files are handled separately
+  ]
+}
