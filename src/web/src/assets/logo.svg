@@ -1,0 +1,38 @@
+<!--
+    File: src/web/src/assets/logo.svg
+
+    Requirements Addressed:
+    - Include Company Logo in Application Header
+      Location: Technical Specification / User Interface Design / 1. Web Interface / 1.1 Employee Dashboard / Layout / Header: Company logo
+
+    - Maintain Consistent Branding Across Platforms
+      Location: Technical Specification / User Interface Design / 3. Consistency and Standards / Design Language
+
+    Description:
+    This SVG file contains the company logo to be displayed in the header of the web and mobile applications, ensuring a unified user experience and adherence to the company's branding guidelines.
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200" height="200">
+
+    <!-- Background Rectangle -->
+    <!-- A white background to ensure logo visibility on various header backgrounds -->
+    <rect width="200" height="200" fill="#FFFFFF" />
+
+    <!-- Company Logo Graphic -->
+    <!-- The logo consists of overlapping shapes representing global connectivity and efficiency -->
+
+    <!-- Outer Circle -->
+    <!-- Represents the global aspect of the application -->
+    <circle cx="100" cy="100" r="90" stroke="#007BFF" stroke-width="4" fill="#E6F2FF" />
+
+    <!-- Inner Arrow Path -->
+    <!-- Symbolizes movement and tracking of expenses -->
+    <path d="M50,150 L100,50 L150,150 Z" fill="#007BFF" />
+
+    <!-- Text Element with Company Name -->
+    <!-- Placeholder for the company name text to reinforce branding -->
+    <text x="100" y="180" font-family="Arial, Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#333333">
+        CompanyName
+    </text>
+
+</svg>
