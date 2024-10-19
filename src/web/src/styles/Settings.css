@@ -1,0 +1,55 @@
+/* Import normalize.css to provide cross-browser consistency in default styling */
+/* Dependency: normalize.css (version 8.0.1) */
+@import 'normalize.css';
+
+/* .settings-container styles
+   Description: Container for the settings page layout.
+   Requirements Addressed:
+     - Improve User Experience (Technical Specification/1.3 System Objectives)
+       "Deliver an intuitive and user-friendly interface across web and mobile platforms for all user roles."
+   Dependencies:
+     - Styles the Settings component (src/web/src/components/Settings.tsx)
+*/
+.settings-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* .settings-header styles
+   Description: Styles for the header section of the settings page.
+   Requirements Addressed:
+     - Improve User Experience (Technical Specification/1.3 System Objectives)
+       "Deliver an intuitive and user-friendly interface across web and mobile platforms for all user roles."
+*/
+.settings-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* .settings-item styles
+   Description: Styles for individual settings items.
+   Requirements Addressed:
+     - Improve User Experience (Technical Specification/1.3 System Objectives)
+       "Deliver an intuitive and user-friendly interface across web and mobile platforms for all user roles."
+*/
+.settings-item {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #555;
+}
+
+/* .settings-item:last-child styles
+   Description: Removes the border from the last settings item.
+   Requirements Addressed:
+     - Improve User Experience (Technical Specification/1.3 System Objectives)
+       "Deliver an intuitive and user-friendly interface across web and mobile platforms for all user roles."
+*/
+.settings-item:last-child {
+    border-bottom: none;
+}
