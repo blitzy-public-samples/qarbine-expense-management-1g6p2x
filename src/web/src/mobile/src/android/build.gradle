@@ -1,0 +1,81 @@
+// Module-level build.gradle file for the Android app module.
+// Responsible for configuring the build process, managing dependencies,
+// and defining build variants for the Android application.
+// Addresses Mobile Features requirement:
+// - Enhance the mobile experience on Android devices
+// - Technical Specification: Section 13.8 Mobile Features
+// Requirements Addressed:
+// - TR-F008.1: Ensure cross-platform support for Android
+// - TR-F008.3: Provide offline mode with data synchronization when online
+// - TR-F008.4: Include a digital wallet for storing receipts and travel documents
+
+apply plugin: 'com.android.application' // Applies the Android application plugin to the project.
+apply plugin: 'kotlin-android' // Applies Kotlin support for Android development.
+
+android {
+    // Specifies the Android SDK version to compile the app.
+    compileSdkVersion 30 // Targeting Android SDK 30 as per 'compileSdkVersion' in the specification.
+
+    defaultConfig {
+        // Unique application ID for publishing.
+        applicationId "com.example.app" // As specified in 'defaultConfig.applicationId'.
+
+        // Minimum SDK version supported by the app.
+        minSdkVersion 21 // Supporting Android 5.0 (Lollipop) and above.
+
+        // Target SDK version for the app.
+        targetSdkVersion 30 // Targeting Android 11.
+
+        // Version code for the app build.
+        versionCode 1 // Initial version code as specified.
+
+        // Version name for the app build.
+        versionName "1.0" // Initial version name as specified.
+    }
+
+    buildTypes {
+        release {
+            // Enables code shrinking, obfuscation, and optimization for release builds.
+            minifyEnabled true // As per 'buildTypes.release.minifyEnabled' in the specification.
+
+            // ProGuard configuration files.
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro' // As specified in 'buildTypes.release.proguardFiles'.
+        }
+        debug {
+            // Disables code shrinking for debug builds.
+            minifyEnabled false // As per 'buildTypes.debug.minifyEnabled' in the specification.
+        }
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+dependencies {
+    // Kotlin standard library for Android development.
+    // Version: 1.5.21
+    // See dependency: org.jetbrains.kotlin:kotlin-stdlib in the specification.
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.21" // [org.jetbrains.kotlin:kotlin-stdlib version 1.5.21]
+
+    // KTX extensions for Android core libraries to improve Kotlin development experience.
+    // Version: 1.6.0
+    // See dependency: androidx.core:core-ktx in the specification.
+    implementation 'androidx.core:core-ktx:1.6.0' // [androidx.core:core-ktx version 1.6.0]
+
+    // Support library for backward-compatible Android UI components.
+    // Version: 1.3.1
+    // See dependency: androidx.appcompat:appcompat in the specification.
+    implementation 'androidx.appcompat:appcompat:1.3.1' // [androidx.appcompat:appcompat version 1.3.1]
+
+    // Layout manager for creating complex Android UI layouts.
+    // Version: 2.0.4
+    // See dependency: androidx.constraintlayout:constraintlayout in the specification.
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4' // [androidx.constraintlayout:constraintlayout version 2.0.4]
+}
+
+// Task to clean the build directory.
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
