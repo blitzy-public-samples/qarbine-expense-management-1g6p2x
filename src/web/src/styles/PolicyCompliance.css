@@ -1,0 +1,80 @@
+/* File: PolicyCompliance.css
+ *
+ * Description:
+ * This file contains the CSS styles for the Policy Compliance component of the web application. It defines the visual presentation of policy compliance information, ensuring a consistent and user-friendly interface.
+ *
+ * Requirements Addressed:
+ * - Improve User Experience (Technical Specification/1.3 System Objectives)
+ *   - Deliver an intuitive and user-friendly interface across web and mobile platforms for all user roles.
+ *
+ * Dependencies:
+ * - Internal:
+ *   - PolicyCompliance component (src/web/src/components/PolicyCompliance.tsx) to style the component according to design specifications.
+ */
+
+/* Styles the main container for the policy compliance section.
+ *
+ * Selector: .policy-compliance-container
+ * Description: Styles the main container for the policy compliance section.
+ * Requirements Addressed:
+ * - Improve User Experience (Technical Specification/1.3 System Objectives)
+ */
+.policy-compliance-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles the header section of the policy compliance component.
+ *
+ * Selector: .policy-compliance-header
+ * Description: Styles the header section of the policy compliance component.
+ * Requirements Addressed:
+ * - Improve User Experience (Technical Specification/1.3 System Objectives)
+ */
+.policy-compliance-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Styles the list of policies displayed within the compliance section.
+ *
+ * Selector: .policy-compliance-list
+ * Description: Styles the list of policies displayed within the compliance section.
+ * Requirements Addressed:
+ * - Improve User Experience (Technical Specification/1.3 System Objectives)
+ */
+.policy-compliance-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Styles individual policy items in the compliance list.
+ *
+ * Selector: .policy-compliance-item
+ * Description: Styles individual policy items in the compliance list.
+ * Requirements Addressed:
+ * - Improve User Experience (Technical Specification/1.3 System Objectives)
+ */
+.policy-compliance-item {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #555;
+}
+
+/* Removes the border from the last policy item.
+ *
+ * Selector: .policy-compliance-item:last-child
+ * Description: Removes the border from the last policy item to enhance visual consistency.
+ * Requirements Addressed:
+ * - Improve User Experience (Technical Specification/1.3 System Objectives)
+ */
+.policy-compliance-item:last-child {
+    border-bottom: none;
+}
