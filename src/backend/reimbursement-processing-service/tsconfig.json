@@ -1,0 +1,35 @@
+{
+  // TypeScript Configuration for the Reimbursement Processing Service
+  // This configuration ensures consistent TypeScript transpilation across the service.
+  // Requirements Addressed:
+  // - Reimbursement Processing (Technical Specification/13.5 Reimbursement Processing)
+  //   Automate the reimbursement process for approved expenses, integrating seamlessly with payroll systems and supporting multiple payment methods.
+
+  "compilerOptions": {
+    // Specify ECMAScript target version. ES6 is used to support modern JavaScript features.
+    "target": "ES6",
+    // Specify module code generation method. CommonJS is used for Node.js compatibility.
+    "module": "commonjs",
+    // Enable all strict type-checking options for better code quality and error checking.
+    "strict": true,
+    // Enables emit interoperability between CommonJS and ES Modules via synthetic default imports.
+    "esModuleInterop": true,
+    // Skip type checking of all declaration files (*.d.ts).
+    "skipLibCheck": true,
+    // Ensure that file names are case-sensitive across the project to prevent issues in different operating systems.
+    "forceConsistentCasingInFileNames": true,
+    // Redirect output structure to the 'dist' directory to separate source code from compiled code.
+    "outDir": "./dist",
+    // Specify the root directory of input files to maintain relative project structure.
+    "rootDir": "./src"
+  },
+  // Include all TypeScript source files in the 'src' directory for compilation.
+  "include": [
+    "./src/**/*"
+  ],
+  // Exclude node modules and test files to optimize compilation time.
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts"
+  ]
+}
