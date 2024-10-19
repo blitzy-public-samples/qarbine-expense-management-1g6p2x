@@ -1,0 +1,79 @@
+// tsconfig.json for the mobile application
+// Location: src/web/src/mobile/tsconfig.json
+
+// Description:
+// This file is the TypeScript configuration file for the mobile application.
+// It defines the compiler options and project settings necessary for building and running
+// the TypeScript code within the mobile app, ensuring compatibility and optimal performance
+// across different environments.
+
+// Requirements Addressed:
+// - Improve User Experience (Technical Specification/1.3 System Objectives)
+//   Deliver an intuitive and user-friendly interface across web and mobile platforms for all user roles.
+//
+// - Ensure Cross-Platform Support for iOS and Android (TR-F008.1, Technical Specification/13.8 Mobile Features)
+//   Ensure the application runs seamlessly on both iOS and Android devices.
+
+// TypeScript Version: 4.5.2
+
+{
+  "compilerOptions": {
+    // ECMAScript target version.
+    // 'es5' target ensures compatibility with older mobile devices running iOS and Android.
+    // Addresses TR-F008.1 by facilitating cross-platform support.
+    "target": "es5",
+
+    // Module system.
+    // 'commonjs' is compatible with React Native bundlers and module resolution.
+    "module": "commonjs",
+
+    // JSX support.
+    // Enables the use of JSX syntax in React components, aiding in building intuitive UIs.
+    // Supports 'Improve User Experience' objective.
+    "jsx": "react",
+
+    // Enable all strict type-checking options.
+    // Improves code quality and reliability, leading to a better user experience.
+    "strict": true,
+
+    // Module interoperability.
+    // Allows default imports from modules with no default export.
+    "esModuleInterop": true,
+
+    // Skip type checking of declaration files.
+    // Speeds up compilation without significantly affecting type safety.
+    "skipLibCheck": true,
+
+    // Ensure consistent casing in file names.
+    // Prevents issues in file imports across different operating systems.
+    "forceConsistentCasingInFileNames": true,
+
+    // Allow default imports from modules with no default export.
+    // Facilitates the use of common JavaScript modules in TypeScript.
+    "allowSyntheticDefaultImports": true,
+
+    // Resolve JSON modules.
+    // Allows importing of .json files, useful for configurations and localizations.
+    "resolveJsonModule": true,
+
+    // Base directory to resolve non-relative module names.
+    // Simplifies module resolution and import statements.
+    "baseUrl": ".",
+
+    // Enable experimental support for decorators.
+    // Supports advanced patterns and integrations that may enhance user experience.
+    "experimentalDecorators": true,
+
+    // Generate source maps for debugging.
+    // Facilitates debugging on mobile devices and emulators.
+    "sourceMap": true
+  },
+
+  // Include source files.
+  // Specifies which files the TypeScript compiler should process.
+  "include": ["src/**/*"],
+
+  // Exclude node_modules and build outputs.
+  // Prevents unnecessary compilation of external dependencies and build artifacts.
+  "exclude": ["node_modules", "build"]
+}
