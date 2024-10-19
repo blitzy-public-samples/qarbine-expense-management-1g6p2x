@@ -1,0 +1,63 @@
+{
+    // TypeScript configuration file for the Expense Management Service
+    // Addresses requirement: Expense Management Service Initialization
+    // Location: Technical Specification/System Architecture/API Layer/Expense Management Service
+    // Description: Initializes the server and configures middleware and routes for managing expense submissions, receipt processing, and policy enforcement.
+
+    // Using TypeScript version 4.5.4 for compiling TypeScript code into JavaScript.
+    "compilerOptions": {
+        // Set the JavaScript language version for emitted JavaScript and include compatible library declarations.
+        // Targeting ES6 to support modern JavaScript features.
+        "target": "ES6",
+
+        // Specify module code generation method.
+        // Using 'commonjs' for compatibility with Node.js modules.
+        "module": "commonjs",
+
+        // Enable all strict type-checking options.
+        // Ensures robust type-checking to prevent errors and enforce best practices.
+        "strict": true,
+
+        // Enables interoperability between CommonJS and ES Modules.
+        // Allows default imports from modules with 'module.exports'.
+        "esModuleInterop": true,
+
+        // Skip type checking of declaration files (*.d.ts).
+        // Improves build performance by not checking types in external declaration files.
+        "skipLibCheck": true,
+
+        // Disallow inconsistently-cased references to the same file.
+        // Helps prevent issues on case-sensitive file systems (e.g., Linux servers).
+        "forceConsistentCasingInFileNames": true,
+
+        // Redirect output structure to the 'dist' directory.
+        // Compiled JavaScript files will be placed in 'dist' directory mirroring the structure of the 'src' directory.
+        "outDir": "./dist",
+
+        // Specify the root folder within your source files.
+        // All input files are expected to be under 'src' directory.
+        "rootDir": "./src",
+
+        // Base directory to resolve non-absolute module names.
+        // Setting it to './' ensures module resolution starts from the project root.
+        "baseUrl": "./",
+
+        // A series of entries which re-map imports to lookup locations relative to the 'baseUrl'.
+        // Configures module path aliases for cleaner and more manageable import statements.
+        "paths": {
+            "*": [
+                "node_modules/*",
+                "src/types/*"
+            ]
+        }
+    },
+    // Include all TypeScript source files in the 'src' directory.
+    "include": [
+        "./src/**/*"
+    ],
+    // Exclude node_modules and built files to prevent unnecessary compilation.
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}
