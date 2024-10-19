@@ -1,0 +1,46 @@
+/**
+ * Prettier configuration file for the Expense Management Service.
+ * This configuration ensures code quality and consistency across the codebase,
+ * addressing the requirement 'Code Quality and Consistency' located in
+ * 'Technical Specification/Development Standards/Code Quality'.
+ */
+
+/* Prettier version: 2.3.2 */
+
+module.exports = {
+  // Enforce a maximum line length of 80 characters for better readability.
+  // Reference: Requirement 'Code Quality and Consistency' - enhances readability.
+  printWidth: 80,
+
+  // Use 2 spaces for indentation to maintain consistency across the codebase.
+  // Reference: Requirement 'Code Quality and Consistency' - maintain consistent code formatting.
+  tabWidth: 2,
+
+  // Use spaces instead of tabs for indentation to prevent issues across different environments.
+  // Reference: Requirement 'Code Quality and Consistency' - enhance maintainability.
+  useTabs: false,
+
+  // Always include semicolons at the end of statements to avoid potential pitfalls.
+  // Reference: Requirement 'Code Quality and Consistency' - enhance code reliability.
+  semi: true,
+
+  // Use single quotes for strings to maintain a consistent coding style.
+  // Reference: Requirement 'Code Quality and Consistency' - maintain consistent code style.
+  singleQuote: true,
+
+  // Include trailing commas in multiline object and array literals for cleaner diffs.
+  // Reference: Requirement 'Code Quality and Consistency' - enhance maintainability.
+  trailingComma: 'es5',
+
+  // Include spaces between brackets in object literals for improved readability.
+  // Reference: Requirement 'Code Quality and Consistency' - enhance readability.
+  bracketSpacing: true,
+
+  // Place the closing JSX tag on a new line for better code clarity.
+  // Reference: Requirement 'Code Quality and Consistency' - maintain consistent code formatting.
+  jsxBracketSameLine: false,
+
+  // Omit parentheses when arrow functions have a single parameter for cleaner code.
+  // Reference: Requirement 'Code Quality and Consistency' - maintain consistent coding style.
+  arrowParens: 'avoid',
+};
