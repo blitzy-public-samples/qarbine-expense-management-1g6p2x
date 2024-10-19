@@ -1,0 +1,76 @@
+// tsconfig.json - TypeScript configuration file for the web application.
+// This configuration file specifies the compiler options and paths for building TypeScript files.
+// It ensures consistent type checking and compilation across the project.
+// Addresses Requirement: "Enhance Efficiency" (Technical Specification/1.3 System Objectives)
+// Description: Reduce processing time and minimize errors in expense reporting and reimbursement workflows.
+
+// External Dependency:
+// - Package: typescript
+// - Version: 4.5.2
+// - Purpose: To provide static type checking and transpilation for TypeScript files.
+
+// Internal Dependency:
+// - Module: src/web/src/utils/constants.ts
+// - Export: API_BASE_URL
+// - Purpose: To use as the base URL for API requests during the build process.
+
+{
+  "compilerOptions": {
+    // Specify ECMAScript target version for emitted JavaScript code.
+    // Targeting ES6 to leverage modern JavaScript features for better performance and compatibility.
+    "target": "ES6",
+    
+    // Specify module code generation method.
+    // Using "commonjs" module system to maintain compatibility with Node.js and bundlers.
+    "module": "commonjs",
+    
+    // Enable all strict type-checking options for enhanced code reliability.
+    // Enforces stricter type checks to catch errors early, minimizing runtime errors.
+    "strict": true,
+
+    // Enable interoperability between CommonJS and ES Modules.
+    // Facilitates importing CommonJS modules with default exports seamlessly.
+    "esModuleInterop": true,
+
+    // Skip type checking of declaration files (*.d.ts) for faster build times.
+    // Reduces processing time, aligning with the objective to enhance efficiency.
+    "skipLibCheck": true,
+
+    // Disallow inconsistently-cased references to the same file.
+    // Prevents issues in case-sensitive file systems, minimizing cross-platform errors.
+    "forceConsistentCasingInFileNames": true,
+
+    // Base directory to resolve non-absolute module names.
+    // Essential for defining path mappings and simplifying module imports.
+    "baseUrl": "./",
+
+    // Configure path mappings to make module imports cleaner and maintainable.
+    // Simplifies importing modules and supports easier refactoring.
+    "paths": {
+      // Path alias for utilities.
+      "@utils/*": ["src/web/src/utils/*"],
+
+      // Path alias for components.
+      "@components/*": ["src/web/src/components/*"],
+
+      // Path alias for pages.
+      "@pages/*": ["src/web/src/pages/*"]
+    },
+
+    // Redirect output structure to the specified directory.
+    // Outputs compiled JavaScript files to "./build" to separate source and build artifacts.
+    "outDir": "./build",
+
+    // Specify the root directory of input files.
+    // Sets the project root to "./src", including modules like "constants.ts" containing "API_BASE_URL".
+    "rootDir": "./src"
+  },
+
+  // Specify which files to include in the compilation.
+  // Includes all TypeScript and TSX files under the "src" directory.
+  "include": ["src/**/*"],
+
+  // Specify which files to exclude from the compilation.
+  // Excludes "node_modules" and "build" directories to optimize build time and prevent redundant processing.
+  "exclude": ["node_modules", "build"]
+}
