@@ -1,0 +1,43 @@
+{
+  // package.json for the Expense Management Service
+  // ----------------------------------------------------------------------
+  // Requirements Addressed:
+  // - Name: Expense Management Service Initialization
+  // - Location: Technical Specification/System Architecture/API Layer/Expense Management Service
+  // - Description: Initializes the server and configures middleware and routes for managing expense submissions, receipt processing, and policy enforcement.
+  // ----------------------------------------------------------------------
+  // This file defines the project's metadata, dependencies, and scripts,
+  // enabling the initialization and configuration of the Expense Management Service,
+  // which handles expense submissions, receipt processing, and policy enforcement.
+  // This aligns with TR-F002.2, TR-F002.3, and TR-F003.2 from the technical requirements.
+
+  "name": "expense-management-service",
+  "version": "1.0.0",
+  "description": "The Expense Management Service for managing expenses, receipts, and policy compliance.",
+  "main": "dist/index.js", // Entry point of the application after TypeScript compilation
+  "scripts": {
+    "start": "node src/index.js", // Starts the server (used in production)
+    "dev": "nodemon src/index.js", // Starts the server with live-reloading for development
+    "test": "jest --coverage", // Runs unit and integration tests with coverage reporting
+    "lint": "eslint src/**/*.ts", // Lints all TypeScript files in the src directory
+    "build": "tsc" // Compiles TypeScript files into JavaScript
+  },
+  "dependencies": {
+    "express": "^4.17.1", // Provides the framework for building HTTP servers and APIs
+    "mongoose": "5.13.8", // Connects to MongoDB and defines schemas/models for expense data
+    "axios": "^0.21.1", // Makes HTTP requests to currency exchange rate providers
+    "jsonwebtoken": "8.5.1", // Creates and verifies JSON Web Tokens for authentication
+    "dotenv": "8.2.0", // Loads environment variables from a .env file into process.env
+    "tesseract.js": "^2.1.1" // Performs OCR on receipt images to extract text data
+  },
+  "devDependencies": {
+    "jest": "^27.0.0", // Runs unit and integration tests
+    "supertest": "^6.1.3", // Tests HTTP endpoints for API correctness
+    "eslint": "^7.32.0", // Analyzes code for potential errors and enforces coding standards
+    "typescript": "^4.4.3", // Provides TypeScript support for the project
+    "nodemon": "^2.0.12" // Automatically restarts the node application when file changes are detected
+  },
+  "engines": {
+    "node": ">=14.0.0" // Specifies the required Node.js version for compatibility
+  }
+}
