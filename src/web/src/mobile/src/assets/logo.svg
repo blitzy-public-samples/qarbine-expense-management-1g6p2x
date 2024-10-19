@@ -1,0 +1,41 @@
+<!--
+    Company Logo SVG File
+    Requirements Addressed:
+    - Improve User Experience (Technical Specification/1.3 System Objectives)
+      Deliver an intuitive and user-friendly interface across web and mobile platforms for all user roles.
+    Dependencies:
+    - MobileHeader (src/web/src/mobile/src/components/MobileHeader.tsx)
+      Used to display the company logo in the mobile header for brand consistency.
+    - MobileFooter (src/web/src/mobile/src/components/MobileFooter.tsx)
+      Used to display the company logo in the footer for brand consistency.
+    - CaptureExpensePage (src/web/src/mobile/src/pages/CaptureExpense.tsx)
+      Used to display the company logo on the expense capture page for brand consistency.
+    Description:
+    This SVG file contains the company logo, used across the mobile application to ensure
+    brand consistency and recognition, enhancing the user experience as per the system objectives.
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Logo Background Circle -->
+  <circle cx="100" cy="100" r="90" fill="#004A7C" />
+  
+  <!-- Logo Text -->
+  <text
+    x="100"
+    y="115"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="60"
+    fill="#FFFFFF"
+  >
+    <!-- Using the company name as part of the logo -->
+    <!-- This text element enhances brand recognition -->
+    <!-- and contributes to the user-friendly interface -->
+    <!-- (Technical Specification/1.3 System Objectives) -->
+    GEXP
+  </text>
+  
+  <!-- Additional Design Elements (if any) -->
+  <!-- Placeholder for any additional logo design specifics -->
+  <!-- to be provided by the design team -->
+</svg>
