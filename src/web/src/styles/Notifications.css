@@ -1,0 +1,92 @@
+/* 
+ * Notifications.css
+ * 
+ * Description:
+ * This file contains the CSS styles for the Notifications component, ensuring consistent visual feedback
+ * for different types of notifications such as success, error, info, and warning.
+ * 
+ * Requirements Addressed:
+ * - Improve User Experience (Technical Specification/1.3 System Objectives)
+ *   - Deliver an intuitive and user-friendly interface across web and mobile platforms for all user roles.
+ * 
+ * Dependencies:
+ * - Internal:
+ *   - Notifications component (src/web/src/components/Notifications.tsx)
+ *     Purpose: To apply styles to the Notifications component for consistent visual feedback.
+ *   - App.css (src/web/src/styles/App.css)
+ *     Purpose: To ensure global styles are consistent with the notifications styling.
+ */
+
+/* 
+ * .notification
+ * 
+ * Styles for the notification container, ensuring it is prominent and easily noticeable.
+ * Addresses Requirement:
+ * - Improve User Experience (Technical Specification/1.3 System Objectives)
+ *   - Delivers an intuitive and user-friendly interface by making notifications easily noticeable for all user roles.
+ */
+.notification {
+    background-color: #f8f9fa; /* Light background to make notifications stand out */
+    border: 1px solid #dee2e6; /* Subtle border to define the notification area */
+    border-radius: 4px; /* Rounded corners for a modern look, enhancing user experience */
+    padding: 10px; /* Provides space inside the notification for content */
+    margin-bottom: 10px; /* Adds space between notifications for better readability */
+    font-size: 14px; /* Ensures text is legible and consistent with the app */
+    color: #212529; /* Standard text color for readability */
+}
+
+/* 
+ * .notification.success
+ * 
+ * Styles for success notifications, using a green theme to indicate success.
+ * Addresses Requirement:
+ * - Improve User Experience (Technical Specification/1.3 System Objectives)
+ *   - Uses color coding to intuitively convey successful actions to the user.
+ */
+.notification.success {
+    background-color: #d4edda; /* Green background to represent success */
+    border-color: #c3e6cb; /* Matching border color for consistency */
+    color: #155724; /* Dark green text color for readability */
+}
+
+/* 
+ * .notification.error
+ * 
+ * Styles for error notifications, using a red theme to indicate errors.
+ * Addresses Requirement:
+ * - Improve User Experience (Technical Specification/1.3 System Objectives)
+ *   - Uses color coding to intuitively alert users to errors.
+ */
+.notification.error {
+    background-color: #f8d7da; /* Red background to signify errors */
+    border-color: #f5c6cb; /* Matching border color for consistency */
+    color: #721c24; /* Dark red text color for readability */
+}
+
+/* 
+ * .notification.info
+ * 
+ * Styles for informational notifications, using a blue theme to convey information.
+ * Addresses Requirement:
+ * - Improve User Experience (Technical Specification/1.3 System Objectives)
+ *   - Uses color coding to intuitively present information to the user.
+ */
+.notification.info {
+    background-color: #d1ecf1; /* Blue background for informational messages */
+    border-color: #bee5eb; /* Matching border color for consistency */
+    color: #0c5460; /* Dark blue text color for readability */
+}
+
+/* 
+ * .notification.warning
+ * 
+ * Styles for warning notifications, using a yellow theme to indicate caution.
+ * Addresses Requirement:
+ * - Improve User Experience (Technical Specification/1.3 System Objectives)
+ *   - Uses color coding to intuitively warn users of potential issues.
+ */
+.notification.warning {
+    background-color: #fff3cd; /* Yellow background to indicate warning */
+    border-color: #ffeeba; /* Matching border color for consistency */
+    color: #856404; /* Dark yellow text color for readability */
+}
