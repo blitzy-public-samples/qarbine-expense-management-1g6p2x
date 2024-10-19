@@ -1,0 +1,62 @@
+# Podfile to manage CocoaPods dependencies for the iOS application
+# Requirements Addressed:
+# - Mobile Features (Technical Specification/13.8 Mobile Features)
+#   - TR-F008.1 Ensure cross-platform support for iOS and Android
+#     Located at: Technical Specification/13.8 Mobile Features
+#     Description: Provides necessary dependencies for React Native integration on iOS.
+#   - TR-F008.3 Provide offline mode with data synchronization when online
+#     Located at: Technical Specification/13.8 Mobile Features
+#     Description: Dependencies included support offline capabilities.
+
+platform :ios, '10.0'  # Specifies that the app targets iOS 10.0 and later
+
+use_frameworks!  # Use dynamic frameworks instead of static libraries
+
+# Define the main app target
+target 'Runner' do
+  # Pods for Runner
+
+  # Include React Native dependencies to integrate React Native components and manage the app lifecycle.
+  # Versions specified ensure compatibility and stability with the project settings.
+  # External Dependencies:
+  # - React (0.64.0): Core library for React Native components.
+  #   Purpose: To integrate React Native components and manage the app lifecycle.
+  #   Version: 0.64.0 (specified near the import)
+  # - React-Core (0.64.0): Core functionalities for React Native.
+  #   Purpose: Provides essential functionalities for React Native applications.
+  #   Version: 0.64.0
+  # - React-RCTText (0.64.0): Text rendering components for React Native.
+  #   Purpose: Handles text rendering in React Native apps.
+  #   Version: 0.64.0
+  # - React-RCTImage (0.64.0): Image rendering components for React Native.
+  #   Purpose: Manages image rendering within the app.
+  #   Version: 0.64.0
+
+  # Function: pod
+  # Description: Specifies a CocoaPod dependency to be included in the project.
+  # Parameters:
+  # - name (String): The name of the pod.
+  # - version (String): The version of the pod.
+  # Returns: None
+  # Steps:
+  # 1. Declare the pod name and version in the Podfile.
+  # 2. Ensure the pod is compatible with the specified platform and project settings.
+  # 3. Run 'pod install' to integrate the pod into the Xcode project.
+
+  # Declare pod dependencies
+  pod 'React', '~> 0.64.0'           # React core library (Version 0.64.0)
+  pod 'React-Core', '~> 0.64.0'      # Core functionalities for React Native (Version 0.64.0)
+  pod 'React-RCTText', '~> 0.64.0'   # Text rendering components (Version 0.64.0)
+  pod 'React-RCTImage', '~> 0.64.0'  # Image rendering components (Version 0.64.0)
+
+  # Internal Dependencies:
+  # - project.pbxproj: Defines the build settings and project configurations for the iOS application.
+  #   Located at: src/web/src/mobile/src/ios/Runner.xcodeproj/project.pbxproj
+  # - Info.plist: Contains configuration and metadata for the iOS application.
+  #   Located at: src/web/src/mobile/src/ios/Info.plist
+
+  # Ensure pods are compatible with the specified platform and project settings.
+  # After modifying this Podfile, run 'pod install' in the terminal to integrate the pods into the Xcode project.
+end
+
+# End of Podfile
