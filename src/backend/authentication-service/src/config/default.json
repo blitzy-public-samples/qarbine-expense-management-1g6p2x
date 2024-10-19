@@ -1,0 +1,49 @@
+{
+  // Default configuration settings for the authentication service.
+  // Requirements addressed:
+  // - Manage secure user access and permissions within the application.
+  //   Location: Technical Specification/13.1 User Authentication and Authorization
+  // This configuration file provides base values that can be overridden by environment-specific configurations.
+
+  "jwt": {
+    // JWT (JSON Web Token) configuration settings.
+    "secret": "process.env.JWT_SECRET || 'default_secret'",
+    // 'secret' is used for signing JSON Web Tokens.
+    // It is crucial for token security and should be set to a secure value in production.
+    // Addresses requirement TR-F001.1: Implement secure login process with multi-factor authentication (MFA).
+    "expiration": "process.env.TOKEN_EXPIRATION || '1h'"
+    // 'expiration' defines how long a JWT is valid.
+    // Setting appropriate expiration times helps in managing user sessions securely.
+    // Related to requirement TR-F001.1 and ensures session management best practices.
+  },
+  "bcrypt": {
+    // bcrypt configuration settings for password hashing.
+    "saltRounds": "process.env.HASH_SALT_ROUNDS || 10"
+    // 'saltRounds' determines the complexity of the password hash.
+    // Increasing this number enhances security but may impact performance.
+    // Aligns with requirement TR-F001.1 for secure user authentication.
+  },
+  "database": {
+    // Database connection settings for the authentication service.
+    "host": "process.env.DB_HOST || 'localhost'",
+    // 'host' specifies the database server address.
+    "port": "process.env.DB_PORT || 5432",
+    // 'port' on which the database server is listening.
+    "username": "process.env.DB_USERNAME || 'default_user'",
+    // 'username' for database authentication.
+    "password": "process.env.DB_PASSWORD || 'default_password'",
+    // 'password' for database authentication.
+    "database": "process.env.DB_NAME || 'auth_service'"
+    // 'database' is the name of the database to connect to.
+    // Ensures secure storage and retrieval of user credentials and related data.
+    // Supports requirement TR-F001.1 by securely managing user authentication data.
+  },
+  "server": {
+    // Server configuration settings for the authentication service.
+    "port": "process.env.PORT || 3000",
+    // 'port' on which the server runs.
+    // Allows flexibility in different environments.
+    "host": "process.env.HOST || 'localhost'"
+    // 'host' address for the server.
+  }
+}
