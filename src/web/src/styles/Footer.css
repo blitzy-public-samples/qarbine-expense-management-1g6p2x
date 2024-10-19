@@ -1,0 +1,101 @@
+/* Footer.css */
+
+/* 
+ * This CSS file defines the styles for the Footer component of the web application.
+ * It ensures a consistent and visually appealing design across different pages,
+ * aligning with the overall branding and user interface guidelines.
+ *
+ * Requirements Addressed:
+ * - Improve User Experience (Technical Specification/1.3 System Objectives)
+ *   Deliver an intuitive and user-friendly interface across web and mobile platforms for all user roles.
+ */
+
+/* 
+ * Footer Section Styles
+ * Defines the overall layout and style of the footer section.
+ */
+.footer {
+    /* 
+     * Sets the background color of the footer.
+     * Ensures consistency with the application's theme colors.
+     */
+    background-color: #f8f9fa;
+
+    /* 
+     * Sets the text color for the footer content.
+     * Provides sufficient contrast for readability.
+     */
+    color: #6c757d;
+
+    /* 
+     * Specifies the padding around the footer content.
+     * Creates adequate spacing for visual comfort.
+     */
+    padding: 20px;
+
+    /* 
+     * Aligns the text within the footer to the center.
+     * Enhances the overall aesthetic and balance.
+     */
+    text-align: center;
+}
+
+/* 
+ * Footer Links Styles
+ * Styles the links within the footer, ensuring they are visually distinct and interactive.
+ */
+.footer-links {
+    /* 
+     * Sets the text color of footer links.
+     * Uses a darker shade to differentiate from regular text.
+     */
+    color: #333333;
+
+    /* 
+     * Removes the underline from the links.
+     * Provides a cleaner look consistent with modern design trends.
+     */
+    text-decoration: none;
+
+    /* 
+     * Adds horizontal margin between links.
+     * Enhances spacing for better clickability and aesthetics.
+     */
+    margin: 0 10px;
+
+    /* 
+     * Adds a transition effect for the color property.
+     * Creates a smooth change in color on hover, enhancing user experience.
+     */
+    transition: color 0.3s;
+}
+
+/* 
+ * Footer Links Hover State
+ * Defines the hover state for footer links, enhancing user interaction.
+ */
+.footer-links:hover {
+    /* 
+     * Changes the link color on hover.
+     * Provides visual feedback to the user, indicating interactivity.
+     */
+    color: #0070f3;
+}
+
+/* 
+ * Footer Logo Styles
+ * Styles the logo within the footer, ensuring it is properly sized and positioned.
+ */
+.footer-logo {
+    /* 
+     * Sets the height of the footer logo.
+     * Maintains consistency with other logo usages across the application.
+     */
+    height: 40px;
+
+    /* 
+     * Changes the cursor to a pointer when hovering over the logo.
+     * Indicates that the logo is clickable, often navigating back to the homepage.
+     */
+    cursor: pointer;
+}
