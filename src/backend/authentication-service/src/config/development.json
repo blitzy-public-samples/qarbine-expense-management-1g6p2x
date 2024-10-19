@@ -1,0 +1,76 @@
+{
+  "_comment": "Configuration file for the development environment of the authentication service.",
+  "_requirement": "Requirement Addressed: User Authentication and Authorization",
+  "_location": "Location: Technical Specification/13.1 User Authentication and Authorization",
+  "_description": "Manage secure user access and permissions within the application, ensuring that only authorized users can perform specific actions based on their roles.",
+
+  "server": {
+    "_comment": "Server configuration settings.",
+    "port": 3000
+  },
+
+  "database": {
+    "_comment": "Database connection settings for the development environment.",
+    "host": "localhost",
+    "port": 5432,
+    "username": "dev_user",
+    "password": "dev_password",
+    "database": "authentication_service_dev"
+  },
+
+  "jwt": {
+    "_comment": "JWT configuration settings.",
+    "secret": "your_development_jwt_secret_key",  // Globals.JWT_SECRET
+    "tokenExpiration": "1h"  // Globals.TOKEN_EXPIRATION
+  },
+
+  "security": {
+    "_comment": "Security configuration settings addressing Technical Requirement TR-F001.1 and TR-F001.3.",
+    "mfaEnabled": true,  // TR-F001.1: Implement secure login process with multi-factor authentication (MFA)
+    "rbac": {
+      "_comment": "Role-Based Access Control settings.",
+      "roles": ["employee", "manager", "finance", "administrator"]  // TR-F001.3: Role-based access control
+    }
+  },
+
+  "bcrypt": {
+    "_comment": "Configuration for bcrypt password hashing. External dependency: bcrypt (version 5.0.1)",
+    "saltRounds": 10
+  },
+
+  "sso": {
+    "_comment": "Single Sign-On integration settings addressing Technical Requirement TR-F001.2.",
+    "enabled": true,
+    "providers": {
+      "google": {
+        "_comment": "Google OAuth2 configuration.",
+        "clientId": "your_google_client_id",
+        "clientSecret": "your_google_client_secret",
+        "callbackURL": "http://localhost:3000/auth/google/callback"
+      },
+      "microsoft": {
+        "_comment": "Microsoft Azure AD configuration.",
+        "clientId": "your_microsoft_client_id",
+        "clientSecret": "your_microsoft_client_secret",
+        "callbackURL": "http://localhost:3000/auth/microsoft/callback"
+      }
+    }
+  },
+
+  "logging": {
+    "_comment": "Logging configuration.",
+    "level": "debug",
+    "file": "./logs/development.log"
+  },
+
+  "session": {
+    "_comment": "Session management configuration.",
+    "secret": "your_session_secret_key",
+    "resave": false,
+    "saveUninitialized": false,
+    "cookie": {
+      "secure": false,
+      "maxAge": 3600000  // 1 hour in milliseconds
+    }
+  }
+}
