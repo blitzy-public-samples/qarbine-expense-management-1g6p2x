@@ -1,0 +1,52 @@
+# Specifies intentionally untracked files to ignore in the Git repository.
+# Requirement Addressed: Version Control Ignored Files
+# Location: System Design/Version Control
+# Description: Defines which files and directories should be ignored by Git to prevent unnecessary clutter and ensure sensitive information is not tracked.
+
+# Node.js dependencies
+# Ignore the 'node_modules' directory containing installed packages.
+# This prevents committing third-party dependencies to the repository.
+# Relevant to backend and frontend services as per "Technology Stack" in the technical specification.
+node_modules/
+
+# Compiled TypeScript files
+# Ignore the 'dist' directory containing compiled JavaScript files generated from TypeScript.
+# This avoids including build artifacts in version control.
+# Related to "Programming Languages" and "Build Tools" in the technical specification.
+dist/
+
+# Environment configuration files
+# Ignore '.env' files containing environment-specific variables and secrets.
+# This is crucial for security to prevent exposing sensitive information like API keys.
+# See "Security Considerations > Data Security > Technical Requirements > SEC-F002.2" in the technical specification.
+.env
+
+# Log files
+# Ignore all log files generated during application runtime.
+# This prevents unnecessary files from cluttering the repository.
+# Logs are mentioned in "Monitoring and Logging" under "Third-Party Services" in the technical specification.
+*.log
+
+# Temporary files
+# Ignore temporary files that may be generated during development or by the OS.
+# This includes files with the '.tmp' extension.
+# Aligns with standard development practices referenced in "Development Environment" in the technical specification.
+*.tmp
+
+# IDE configuration files
+# Ignore personal IDE configuration files like those for Visual Studio Code.
+# This ensures that individual developer settings do not affect the repository.
+# Pertains to "Development Tools" not being shared, as per "Developer Workflow" in the technical specification.
+.vscode/
+
+# Terraform state files
+# Ignore Terraform state files that contain metadata about the infrastructure.
+# These files can contain sensitive information and should not be tracked.
+# See "Infrastructure > Infrastructure as Code > Terraform State Files" in the technical specification.
+*.tfstate
+
+# Terraform directories
+# Ignore the '.terraform' directory containing Terraform modules and plugins.
+# This prevents committing downloaded modules and plugins to version control.
+# Related to "Infrastructure > Cloud Services > Infrastructure as Code" in the technical specification.
+.terraform/
