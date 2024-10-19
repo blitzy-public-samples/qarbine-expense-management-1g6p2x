@@ -1,0 +1,78 @@
+/* Global variables for primary color and background color */
+:root {
+    --primaryColor: #007bff; /* Primary color used throughout the app */
+    --backgroundColor: #f9f9f9; /* Background color for containers */
+}
+
+/*
+ * .expenseCaptureContainer
+ *
+ * Description:
+ * Styles the main container for the expense capture component.
+ *
+ * Requirements Addressed:
+ * - Enables employees to efficiently capture and submit travel expenses through user-friendly mobile interfaces.
+ *   (Technical Specification/13.2 Expense Submission)
+ *
+ * Steps:
+ * - Set display to flex to enable flexible layouts.
+ * - Set flex-direction to column for vertical stacking of elements.
+ * - Apply padding for spacing within the container.
+ * - Set background color using the backgroundColor global variable.
+ */
+.expenseCaptureContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: var(--backgroundColor);
+}
+
+/*
+ * .captureButton
+ *
+ * Description:
+ * Styles the button used to capture expenses.
+ *
+ * Requirements Addressed:
+ * - Provides user-friendly interface components to enhance user interaction during expense capture.
+ *   (Technical Specification/13.2 Expense Submission)
+ *
+ * Steps:
+ * - Set the background color using the primaryColor global variable.
+ * - Ensure the text color is white for contrast.
+ * - Remove default border styling.
+ * - Apply padding for button size.
+ * - Round the corners with border-radius.
+ * - Change cursor to pointer on hover.
+ */
+.captureButton {
+    background-color: var(--primaryColor);
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/*
+ * .receiptPreview
+ *
+ * Description:
+ * Styles the preview area for uploaded receipts.
+ *
+ * Requirements Addressed:
+ * - Allows attachment of digital receipts or photos of physical receipts.
+ *   (Technical Specification/13.2 Expense Submission)
+ *
+ * Steps:
+ * - Set border to a light gray color.
+ * - Apply padding for spacing within the preview area.
+ * - Add margin to separate from other elements.
+ * - Round the corners with border-radius.
+ */
+.receiptPreview {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
