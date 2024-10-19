@@ -1,0 +1,23 @@
+{
+  "_comment": [
+    "Default configuration settings for the Expense Management Service.",
+    "Requirements Addressed:",
+    "- Manages the core functionalities of expense submission, receipt processing, and policy enforcement.",
+    "  Location: Technical Specification/System Architecture/API Layer/Expense Management Service",
+    "Dependencies:",
+    "- dotenv (version 8.2.0): Loads environment variables from a .env file into process.env",
+    "Configuration Steps:",
+    "1. Load environment variables using dotenv.",
+    "2. Set default database connection settings.",
+    "3. Set JWT secret for token signing.",
+    "4. Specify log level for application logging."
+  ],
+  "PORT": 3000,
+  "DB_HOST": "localhost",
+  "DB_PORT": 5432,
+  "DB_NAME": "expense_management",
+  "DB_USER": "default_user",
+  "DB_PASSWORD": "default_password",
+  "JWT_SECRET": "default_jwt_secret",
+  "LOG_LEVEL": "info"
+}
