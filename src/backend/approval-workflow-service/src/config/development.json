@@ -1,0 +1,48 @@
+{
+  "//": "Configuration file for the Approval Workflow Service in the development environment",
+  "// Requirements Addressed": {
+    "//": "Approval Workflow (Technical Specification/13.4 Approval Workflow)",
+    "// Description": "Streamline the approval process for submitted expense reports with configurable workflows, batch processing, and delegation capabilities."
+  },
+  "database": {
+    "//": "MongoDB connection string for development environment",
+    "connectionString": "mongodb://localhost:27017/approval_workflow_dev"
+  },
+  "logging": {
+    "//": "Set logging level to DEBUG for detailed logs during development",
+    "level": "DEBUG"
+  },
+  "emailService": {
+    "//": "Configured email service instance for sending notifications",
+    "host": "smtp.dev.mail.example.com",
+    "port": 587,
+    "secure": false,
+    "auth": {
+      "user": "dev-user@example.com",
+      "pass": "dev-password"
+    }
+  },
+  "dependencies": {
+    "//": "External dependencies with specified versions",
+    "mongoose": "5.13.8", // Used for interacting with MongoDB to manage approval data.
+    "nodemailer": "6.6.3", // Used for sending email notifications.
+    "jsonwebtoken": "8.5.1" // Used for handling JSON Web Tokens for authentication.
+  },
+  "services": {
+    "//": "Configuration for external services integrations in development",
+    "notificationService": {
+      "//": "Service endpoint for sending approval notifications",
+      "endpoint": "http://localhost:4000/notify"
+    }
+  },
+  "auth": {
+    "//": "Authentication settings for development environment",
+    "jwtSecret": "your-development-jwt-secret",
+    "tokenExpiration": "1h"
+  },
+  "server": {
+    "//": "Server configuration for the development environment",
+    "port": 3000,
+    "host": "localhost"
+  }
+}
