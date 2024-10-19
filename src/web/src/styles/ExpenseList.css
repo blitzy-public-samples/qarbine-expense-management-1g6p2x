@@ -1,0 +1,70 @@
+/* 
+ * ExpenseList.css
+ * Styles for the ExpenseList component.
+ * 
+ * Addresses requirement: "Improve User Experience" from Technical Specification/1.3 System Objectives.
+ * Description: Deliver an intuitive and user-friendly interface across web and mobile platforms for all user roles.
+ * Ensures responsive design considerations for different screen sizes.
+ * 
+ * Dependencies:
+ * - ExpenseList component (src/web/src/components/ExpenseList.tsx) for applying these styles.
+ * - ExpenseItem component (src/web/src/components/ExpenseItem.tsx) to style individual expense items.
+ * - App.css (src/web/src/styles/App.css) for global styles and theme colors.
+ * - ExpenseForm.css (src/web/src/styles/ExpenseForm.css) to maintain consistency in form-related styles.
+ */
+
+/* Styles the container for the list of expenses, ensuring proper spacing and alignment */
+/* Enhances user experience by providing a clean and accessible layout */
+/* Reference: Technical Specification/1.3 System Objectives - Improve User Experience */
+.expense-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background-color: #ffffff; /* White background for contrast and readability */
+    border-radius: 8px;        /* Rounded corners for a modern look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Styles individual expense items for clear display of details */
+/* Ensures each item is easily distinguishable and information is organized */
+/* Reference: Technical Specification/1.3 System Objectives - Improve User Experience */
+.expense-item {
+    display: flex;
+    justify-content: space-between; /* Space out content for clarity */
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0; /* Light border to separate items */
+}
+
+/* Removes the border from the last expense item for a clean look */
+/* Enhances visual appeal by preventing unnecessary borders */
+/* Reference: Technical Specification/1.3 System Objectives - Improve User Experience */
+.expense-item:last-child {
+    border-bottom: none;
+}
+
+/* Enhances user interaction with a subtle background change on hover */
+/* Provides visual feedback to users, improving interactivity */
+/* Reference: Technical Specification/1.3 System Objectives - Improve User Experience */
+.expense-item:hover {
+    background-color: #f9f9f9; /* Light grey background on hover */
+}
+
+/* Responsive design adjustments for smaller screens */
+/* Ensures usability across different devices */
+/* Reference: Technical Specification/1.3 System Objectives - Improve User Experience */
+@media (max-width: 600px) {
+    .expense-list {
+        padding: 15px;
+        gap: 8px;
+    }
+    .expense-item {
+        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .expense-item:hover {
+        background-color: #ffffff; /* Disable hover effect on touch devices */
+    }
+}
