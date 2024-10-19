@@ -1,0 +1,77 @@
+/* App.css
+
+   This file contains the global CSS styles for the web application, ensuring a consistent look and feel across all components and pages.
+   It defines base styles, layout settings, and theme colors that are applied throughout the application.
+
+   Requirements Addressed:
+   - Improve User Experience (Technical Specification/1.3 System Objectives)
+     - Deliver an intuitive and user-friendly interface across web and mobile platforms for all user roles.
+*/
+
+/* Set the global font, background color, and reset default margins and paddings for the entire application.
+
+   Addresses: Improve User Experience (Technical Specification/1.3 System Objectives)
+   - Provides consistent typography and layout, enhancing usability across the application.
+*/
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define default styles for all anchor tags to ensure consistent link appearance and enhance user interaction.
+
+   Addresses: Improve User Experience (Technical Specification/1.3 System Objectives)
+   - Enhances navigational elements for better user engagement.
+*/
+a {
+    color: #0070f3;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Define hover state for anchor tags to provide visual feedback during user interaction.
+
+   Addresses: Improve User Experience (Technical Specification/1.3 System Objectives)
+   - Improves interactivity and responsiveness of links.
+*/
+a:hover {
+    color: #005bb5;
+}
+
+/* Provide a responsive layout container for consistent spacing and alignment across the application.
+
+   Addresses: Improve User Experience (Technical Specification/1.3 System Objectives)
+   - Ensures content is properly aligned and accessible on various screen sizes.
+*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Style buttons with a consistent look and feel to enhance usability and encourage user interaction.
+
+   Addresses: Improve User Experience (Technical Specification/1.3 System Objectives)
+   - Creates visually appealing and accessible buttons throughout the application.
+*/
+.button {
+    background-color: #0070f3;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Define hover state for buttons to provide immediate feedback and improve the interactive experience.
+
+   Addresses: Improve User Experience (Technical Specification/1.3 System Objectives)
+   - Enhances the responsiveness of buttons when users interact with them.
+*/
+.button:hover {
+    background-color: #005bb5;
+}
