@@ -1,0 +1,224 @@
+/* 
+   src/web/src/mobile/src/styles/MobileApp.css
+   This file contains the global styles for the mobile application, ensuring a consistent look and feel across all components and pages. It defines the base styles, color schemes, typography, and layout properties used throughout the mobile app.
+
+   Requirements Addressed:
+   - Improve User Experience (Technical Specification/1.3 System Objectives): Deliver an intuitive and user-friendly interface across web and mobile platforms for all user roles.
+*/
+
+/* Global Styles */
+
+/* 
+   Applies global styles to the body element, ensuring a consistent background and typography across the app.
+   Selector: body
+   Description: Applies global styles to the body element, ensuring a consistent background and typography across the app.
+   Requirements Addressed:
+   - Improve User Experience (Technical Specification/1.3 System Objectives)
+*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9; /* Light background for better readability */
+    color: #333; /* Dark text color for optimal contrast */
+}
+
+/* 
+   Defines the layout and spacing for container elements, ensuring consistent alignment and padding.
+   Selector: .container
+   Description: Defines the layout and spacing for container elements, ensuring consistent alignment and padding.
+   Requirements Addressed:
+   - Improve User Experience (Technical Specification/1.3 System Objectives)
+*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 
+   Styles buttons with a consistent appearance, including color, padding, and border-radius.
+   Selector: .button
+   Description: Styles buttons with a consistent appearance, including color, padding, and border-radius.
+   Requirements Addressed:
+   - Improve User Experience (Technical Specification/1.3 System Objectives)
+*/
+.button {
+    background-color: #007bff; /* Primary blue color */
+    color: #fff; /* White text for contrast */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* Rounded corners for modern look */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* 
+   Defines hover effects for buttons to enhance interactivity and user feedback.
+   Selector: .button:hover
+   Description: Defines hover effects for buttons to enhance interactivity and user feedback.
+   Requirements Addressed:
+   - Improve User Experience (Technical Specification/1.3 System Objectives)
+*/
+.button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Additional Global Styles */
+
+/* 
+   Enhances focus visibility for better accessibility, complying with WCAG 2.1 guidelines.
+   Requirements Addressed:
+   - Improve User Experience (Technical Specification/1.3 System Objectives)
+   - Accessibility Features (User Interface Design/4. Accessibility Features)
+*/
+:focus {
+    outline: 2px solid #0056b3; /* High-contrast outline */
+    outline-offset: 2px;
+}
+
+/* 
+   Ensures images are responsive and scale appropriately on different devices.
+   Requirements Addressed:
+   - Improve User Experience (Technical Specification/1.3 System Objectives)
+*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 
+   Provides consistent styling for headers to establish visual hierarchy.
+   Requirements Addressed:
+   - Improve User Experience (Technical Specification/1.3 System Objectives)
+*/
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    margin: 0 0 15px 0;
+    font-weight: 600;
+}
+
+/* 
+   Styles links with a consistent color and hover effect to enhance navigation.
+   Requirements Addressed:
+   - Improve User Experience (Technical Specification/1.3 System Objectives)
+*/
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* 
+   Styles form elements for a consistent and intuitive user experience.
+   Requirements Addressed:
+   - Improve User Experience (Technical Specification/1.3 System Objectives)
+*/
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* 
+   Styles disabled buttons to indicate non-interactivity.
+   Requirements Addressed:
+   - Improve User Experience (Technical Specification/1.3 System Objectives)
+*/
+.button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+/* 
+   Utility classes for margin spacing to maintain consistent layout.
+   Requirements Addressed:
+   - Improve User Experience (Technical Specification/1.3 System Objectives)
+*/
+.mt-1 { margin-top: 5px; }
+.mt-2 { margin-top: 10px; }
+.mt-3 { margin-top: 15px; }
+.mb-1 { margin-bottom: 5px; }
+.mb-2 { margin-bottom: 10px; }
+.mb-3 { margin-bottom: 15px; }
+
+/* 
+   Styles notifications to align with mobile design patterns, enhancing user awareness.
+   Requirements Addressed:
+   - Implement push notifications for expense status updates and policy reminders (Technical Specification/13.8 Mobile Features/TR-F008.2)
+*/
+.notification {
+    padding: 15px;
+    background-color: #e9ecef;
+    border-left: 4px solid #007bff;
+    margin-bottom: 20px;
+}
+
+.notification.success { border-color: #28a745; }
+.notification.error { border-color: #dc3545; }
+.notification.warning { border-color: #ffc107; }
+
+/* 
+   Styles the offline indicator to inform users when the app is offline.
+   Requirements Addressed:
+   - Provide offline mode with data synchronization when online (Technical Specification/13.8 Mobile Features/TR-F008.3)
+*/
+.offline-indicator {
+    background-color: #ffcc00;
+    color: #333;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* 
+   Styles for the digital wallet component, providing a consistent look for storing receipts and documents.
+   Requirements Addressed:
+   - Include a digital wallet for storing receipts and travel documents (Technical Specification/13.8 Mobile Features/TR-F008.4)
+*/
+.digital-wallet {
+    background-color: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.digital-wallet h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* 
+   Responsive adjustments for smaller screen sizes to ensure usability across devices.
+   Requirements Addressed:
+   - Ensure cross-platform support for iOS and Android (Technical Specification/13.8 Mobile Features/TR-F008.1)
+*/
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .button {
+        padding: 8px 16px;
+    }
+}
