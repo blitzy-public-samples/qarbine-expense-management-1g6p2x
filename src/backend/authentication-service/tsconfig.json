@@ -1,0 +1,51 @@
+{
+  // TypeScript Configuration File for the Authentication Service
+  // TypeScript Version: 4.5.4
+  
+  // This configuration addresses the following requirement:
+  // Requirement: User Authentication and Authorization
+  // Location: Technical Specification/13.1 User Authentication and Authorization
+  // Description: Manage secure user access and permissions within the application,
+  // ensuring that only authorized users can perform specific actions based on their roles.
+
+  "compilerOptions": {
+    // Target ECMAScript 6 (ES6) for output
+    // Supports modern JavaScript features required for implementing authentication functionalities
+    "target": "ES6",
+
+    // Use CommonJS module system
+    // Ensures compatibility with Node.js environment used in the backend services
+    "module": "commonjs",
+
+    // Enable all strict type-checking options
+    // Enforces strong typing to prevent errors and enhance code quality
+    "strict": true,
+
+    // Enable interoperability between CommonJS and ES Modules
+    // Allows default imports from modules with 'export =' syntax
+    "esModuleInterop": true,
+
+    // Skip type checking of all declaration files (*.d.ts)
+    // Improves build performance by skipping library type checks
+    "skipLibCheck": true,
+
+    // Disallow inconsistently-cased references to the same file
+    // Helps maintain cross-platform consistency, critical for file imports in authentication modules
+    "forceConsistentCasingInFileNames": true,
+
+    // Redirect output structure to the 'dist' directory
+    // Separates compiled JavaScript files from source TypeScript files, aiding in deployment
+    "outDir": "./dist",
+
+    // Specify the root directory of input files
+    // Ensures the compiler includes all TypeScript files under 'src' for the authentication service
+    "rootDir": "./src"
+  },
+
+  // Include all TypeScript files in the 'src' directory
+  "include": ["src/**/*"],
+
+  // Exclude specific directories and files from compilation
+  // Excludes node_modules and test files to prevent unnecessary compilation
+  "exclude": ["node_modules", "**/*.test.ts"]
+}
