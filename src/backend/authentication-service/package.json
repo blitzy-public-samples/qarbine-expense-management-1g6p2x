@@ -1,0 +1,64 @@
+{
+  // Package name for the authentication service
+  "name": "authentication-service",
+
+  // Version of the authentication service
+  "version": "1.0.0",
+
+  // Description of the authentication service
+  "description": "The package.json file for the authentication service, defining dependencies, scripts, and metadata for managing user authentication and authorization.",
+
+  // Main entry point of the application
+  "main": "dist/index.js",
+
+  // Scripts for building, developing, testing, and running the application
+  "scripts": {
+    // Starts the compiled application
+    "start": "node dist/index.js",
+
+    // Runs the application in development mode with automatic restarts
+    "dev": "ts-node-dev src/index.ts",
+
+    // Builds the application by compiling TypeScript files
+    "build": "tsc",
+
+    // Runs the test suite using Jest
+    "test": "jest"
+  },
+
+  // Dependencies required for the authentication service
+  "dependencies": {
+    // Express framework for handling HTTP requests (v4.17.1)
+    // Requirement Addressed: User Authentication and Authorization
+    // Location: Technical Specification/13.1 User Authentication and Authorization
+    "express": "4.17.1",
+
+    // Bcrypt library for hashing and verifying passwords (v5.0.1)
+    // Ensures secure password handling as per TR-F001.1 and TR-F001.3
+    // Location: Technical Specification/13.1 User Authentication and Authorization
+    "bcrypt": "5.0.1",
+
+    // JSON Web Token library for creating and verifying JWTs (v8.5.1)
+    // Supports token-based authentication as per TR-F001.1 and TR-F001.2
+    // Location: Technical Specification/13.1 User Authentication and Authorization
+    "jsonwebtoken": "8.5.1"
+  },
+
+  // Development dependencies for building and testing the application
+  "devDependencies": {
+    // ts-node-dev for running TypeScript applications in development with restart capabilities
+    "ts-node-dev": "^1.1.8",
+
+    // TypeScript compiler for type checking and compiling TypeScript to JavaScript
+    "typescript": "^4.5.4",
+
+    // Jest testing framework for writing and running tests
+    "jest": "^27.4.5",
+
+    // Type definitions for Jest to enable TypeScript support
+    "@types/jest": "^27.0.3",
+
+    // Type definitions for Node.js to enable TypeScript support
+    "@types/node": "^16.11.7"
+  }
+}
