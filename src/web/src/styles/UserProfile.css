@@ -1,0 +1,132 @@
+/* 
+    UserProfile.css
+
+    This stylesheet defines styles for the UserProfile component to ensure that the user profile page is visually appealing, responsive, and consistent with the overall design language of the application.
+
+    Addressing Requirement: 'Improve User Experience'
+    Description: Deliver an intuitive and user-friendly interface across web and mobile platforms for all user roles.
+    Location: Technical Specification/1.3 System Objectives
+*/
+
+/* 
+    .user-profile-container
+
+    The main container for the user profile layout.
+    - Utilizes flexbox to create a flexible and responsive design.
+    - Centers content to enhance visual appeal.
+    - Applies padding and background color to improve readability and aesthetics.
+    - Adds border radius and box shadow for a modern, clean look.
+
+    This contributes to an intuitive and user-friendly interface by structuring the layout in an organized and visually pleasing manner.
+
+    Requirement Addressed: 'Improve User Experience' (Technical Specification/1.3 System Objectives)
+*/
+.user-profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 
+    .user-profile-header
+
+    Styles for the header section of the user profile.
+    - Increases font size and weight to make the header prominent.
+    - Adds margin to separate it from other elements.
+
+    Enhances readability and draws attention to important headings, contributing to a better user experience.
+
+    Requirement Addressed: 'Improve User Experience' (Technical Specification/1.3 System Objectives)
+*/
+.user-profile-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 
+    .user-profile-details
+
+    Styles for the user details section.
+    - Sets width and max-width to ensure content is appropriately sized on different screens.
+    - Centers the details within the container.
+    - Adds padding and background color for better readability.
+    - Applies border radius and box shadow for a clean and professional look.
+
+    Organizes user information in a clear and accessible way, enhancing usability.
+
+    Requirement Addressed: 'Improve User Experience' (Technical Specification/1.3 System Objectives)
+*/
+.user-profile-details {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 
+    .user-profile-input
+
+    Styles for input fields in the user profile.
+    - Sets full width for inputs to align with the container.
+    - Adds padding for better touch targets and comfort.
+    - Adds margin to separate input fields.
+    - Styles borders and adds border radius for a clean look.
+
+    Improves user interaction with form elements, making data entry intuitive.
+
+    Requirement Addressed: 'Improve User Experience' (Technical Specification/1.3 System Objectives)
+*/
+.user-profile-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* 
+    .user-profile-button
+
+    Styles for buttons in the user profile.
+    - Provides adequate padding for a comfortable clickable area.
+    - Uses a standout background color consistent with design language.
+    - Styles text for legibility against the background.
+    - Removes default borders and applies border radius.
+    - Changes cursor to pointer to indicate interactivity.
+    - Adds transition effect for smooth background color changes.
+
+    Enhances the visual appeal and interactivity of buttons, encouraging user engagement.
+
+    Requirement Addressed: 'Improve User Experience' (Technical Specification/1.3 System Objectives)
+*/
+.user-profile-button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Primary color */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* 
+    .user-profile-button:hover
+
+    Hover effect for buttons in the user profile.
+    - Darkens the background color on hover.
+
+    Provides visual feedback on interaction, making the interface more responsive and engaging.
+
+    Requirement Addressed: 'Improve User Experience' (Technical Specification/1.3 System Objectives)
+*/
+.user-profile-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
