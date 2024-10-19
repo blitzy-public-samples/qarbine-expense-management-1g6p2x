@@ -1,0 +1,44 @@
+// Prettier configuration for the authentication service
+// Enforces consistent code style and quality across the authentication service
+// Requirements Addressed:
+// - Code Quality and Consistency (Technical Specification/13.1 User Authentication and Authorization)
+//   Location: Technical Specification/13.1 User Authentication and Authorization
+//   Description: Ensure consistent code style and quality across the authentication service by enforcing formatting rules.
+
+// External Dependencies:
+// - Prettier (version 2.3.2)
+//   Purpose: Used for formatting code to ensure consistency and readability across the project.
+
+module.exports = {
+  // Specify the line length that the printer will wrap on.
+  // Keeps code easily readable and maintainable.
+  printWidth: 80,
+
+  // Specify the number of spaces per indentation-level.
+  // Consistency with indentation improves code clarity.
+  tabWidth: 2,
+
+  // Indent lines with spaces instead of tabs.
+  // Ensures consistent rendering across different editors.
+  useTabs: false,
+
+  // Print semicolons at the ends of statements.
+  // Helps avoid issues related to automatic semicolon insertion.
+  semi: true,
+
+  // Use single quotes instead of double quotes.
+  // Preference for single quotes for strings for consistency.
+  singleQuote: true,
+
+  // Print trailing commas wherever possible when multi-line.
+  // Makes version control diffs cleaner and editing code nicer.
+  trailingComma: 'es5',
+
+  // Print spaces between brackets in object literals.
+  // Improves readability of object definitions.
+  bracketSpacing: true,
+
+  // Include parentheses around a sole arrow function parameter.
+  // Improves readability and consistency in function definitions.
+  arrowParens: 'avoid',
+};
