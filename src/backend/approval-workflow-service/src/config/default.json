@@ -1,0 +1,36 @@
+{
+  "_comment": "Default configuration for the Approval Workflow Service. Addresses Technical Specification/13.4 Approval Workflow.",
+
+  "database": {
+    "_comment": "Database connection string for MongoDB. Related to internal dependency 'mongoose' (v5.13.8). Addresses requirement TR-F004.1 for configuring multi-level approval workflows.",
+    "connectionString": "mongodb://localhost:27017/approval-workflow-db"
+  },
+
+  "logging": {
+    "_comment": "Logging configuration. Set log level to 'DEBUG' for detailed logging during development.",
+    "level": "DEBUG"
+  },
+
+  "emailService": {
+    "_comment": "Email service configuration for sending approval status notifications. Utilizes 'nodemailer' (v6.6.3). Addresses requirement TR-F004.3 for in-app notifications.",
+    "service": "gmail",
+    "auth": {
+      "user": "your-email@example.com",
+      "pass": "your-email-password"
+    }
+  },
+
+  "jwt": {
+    "_comment": "JWT settings for authentication. Uses 'jsonwebtoken' (v8.5.1). Related to authentication middleware and security.",
+    "secret": "your_jwt_secret_key",
+    "expiresIn": "1h"
+  },
+
+  "services": {
+    "_comment": "Internal service endpoints and configurations.",
+    "approvalService": {
+      "_comment": "Configuration for Approval Service interactions. Uses internal dependencies from 'approvalService.ts'.",
+      "endpoint": "http://localhost:3000/api/approvals"
+    }
+  }
+}
