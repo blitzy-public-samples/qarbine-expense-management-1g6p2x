@@ -1,0 +1,76 @@
+{
+  // Production configuration file for the Reporting and Analytics Service
+  // This configuration addresses the following requirement:
+  // "Provide comprehensive reporting and analytical tools for tracking, managing, and forecasting expenses, tailored to different user roles."
+  // Located at: Technical Specification/13.6 Reporting and Analytics
+
+  "database": {
+    // Database configuration for the production environment
+    // MongoDB connection settings
+    // As per Data Layer in Technical Specification, MongoDB is used to store aggregated report data
+    // External dependency: "mongoose", version "^5.10.9"
+    // Purpose: Interacts with MongoDB to fetch and store aggregated report data
+    "host": "prod-db-host",
+    "port": 27017,
+    "name": "reporting_db_prod",
+    "username": "prod_db_user",
+    "password": "prod_db_password",
+    "authSource": "admin",
+    "ssl": true
+  },
+  "auth": {
+    // Authentication settings to secure access to the reporting service
+    // Uses JWT tokens for authentication and authorization
+    // Addresses requirements in Technical Specification/13.1 User Authentication and Authorization
+    // External dependency: "jsonwebtoken", version "^8.5.1"
+    // Purpose: Used for verifying JWT tokens to authenticate users
+    "jwtSecret": "your_prod_jwt_secret", // Secret key for signing JWT tokens in production
+    "tokenExpiry": "1h"
+    // Internal dependency: "authMiddleware" at "src/middlewares/authMiddleware.ts"
+    // Ensures secure access by enforcing authentication and authorization
+  },
+  "services": {
+    // Service endpoints used by the Reporting and Analytics Service
+    // Endpoint for accessing report data in production environment
+    // May interact with other internal services as defined in Technical Specification
+    "reportServiceEndpoint": "https://api.yourdomain.com/api/reports"
+  },
+  "logging": {
+    // Logging configuration for production environment
+    // Ensures application logs are appropriately managed for monitoring and debugging
+    // As per Technical Specification/Security Considerations/Monitoring and Logging
+    "level": "info", // Logging level: 'error', 'warn', 'info', 'verbose', 'debug', 'silly'
+    "file": "/var/log/reporting-analytics-service.log", // Log file location
+    "maxSize": "10m", // Maximum size of a log file before rotation
+    "maxFiles": "14d" // Maximum number of days to keep rotated logs
+  },
+  "security": {
+    // Security settings for production environment
+    // Ensuring secure communication as per Technical Specification/Security Considerations/Data Security
+    "enableHTTPS": true, // Enforce HTTPS connections
+    "tlsVersion": "TLSv1.2", // Minimum TLS version
+    // Paths to SSL/TLS certificates and keys (managed securely)
+    "certificate": "/etc/ssl/certs/yourdomain.crt",
+    "key": "/etc/ssl/private/yourdomain.key"
+    // Note: Certificate and key files must be securely stored and managed
+  },
+  "performance": {
+    // Performance tuning parameters for production
+    // Addresses scalability and reliability as per Technical Specification/6. Scalability and Redundancy
+    "maxConcurrentRequests": 1000, // Maximum number of concurrent requests
+    "requestTimeout": 30000, // Timeout for requests in milliseconds
+    "keepAliveTimeout": 60000 // Keep-alive timeout in milliseconds
+  },
+  "dataAggregator": {
+    // Configuration for the data aggregator module
+    // Internal dependency: "dataAggregator" at "src/utils/dataAggregator.ts"
+    // Purpose: Aggregates data from various sources to generate comprehensive reports
+    // Relevant to Technical Specification/Component Interactions/Reporting and Analytics Service
+    "aggregationInterval": "5m", // Time interval for data aggregation
+    "sourceSystems": [
+      // List of data source systems to aggregate data from
+      "expense-management-service",
+      "approval-workflow-service"
+    ]
+  }
+}
