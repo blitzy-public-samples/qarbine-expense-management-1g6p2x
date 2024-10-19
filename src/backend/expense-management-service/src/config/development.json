@@ -1,0 +1,25 @@
+{
+  // Development environment configuration settings for the Expense Management Service.
+  // Requirements Addressed:
+  // - Expense Management Configuration
+  //   Location: Technical Specification/System Architecture/API Layer/Expense Management Service
+  //   Description: Manages the core functionalities of expense submission, receipt processing, and policy enforcement.
+
+  // External Dependency:
+  // - dotenv (version 8.2.0): Loads environment variables from a .env file into process.env
+
+  // Load environment variables using dotenv.
+  "PORT": 3000,                    // The port number on which the development server will run.
+  "DB_HOST": "localhost",          // Hostname of the development database server.
+  "DB_PORT": 5432,                 // Port number for the development database server.
+  "DB_NAME": "expense_management_dev", // Database name for the development environment.
+  "DB_USER": "dev_user",           // Database user for development.
+  "DB_PASSWORD": "dev_password",   // Password for the development database user.
+  "JWT_SECRET": "dev_jwt_secret",  // Secret key for signing JWT tokens in development.
+  "LOG_LEVEL": "debug"             // Specifies log level for detailed logging in development.
+
+  // Steps:
+  // 1. Set development database connection settings.
+  // 2. Set JWT secret for development environment.
+  // 3. Specify log level for detailed logging in development.
+}
