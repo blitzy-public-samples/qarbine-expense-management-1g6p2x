@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" 
+"http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- 
+    CFBundleIdentifier: Unique identifier for the app bundle.
+    This key specifies the bundle identifier, which is used by iOS to identify the app uniquely.
+    -->
+    <key>CFBundleIdentifier</key>
+    <string>com.example.GlobalExpenseTracker</string>
+
+    <!-- 
+    CFBundleDisplayName: Display name of the app as shown on the device.
+    Addresses requirement 'Mobile Features' in 'Technical Specification/13.8 Mobile Features' to enhance user experience.
+    -->
+    <key>CFBundleDisplayName</key>
+    <string>Global Expense Tracker</string>
+
+    <!-- 
+    CFBundleVersion: Build version number of the app.
+    This key is required for version management and updates.
+    -->
+    <key>CFBundleVersion</key>
+    <string>1.0.0</string>
+
+    <!-- 
+    CFBundleShortVersionString: Release version number of the app.
+    This is the version number that is displayed to users.
+    -->
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+
+    <!--
+    UISupportedInterfaceOrientations: Supported interface orientations.
+    Ensures app works in both portrait and landscape orientations, enhancing user experience as per requirement TR-F008.1 in 'Technical Specification/13.8 Mobile Features'.
+    -->
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+
+    <!--
+    NSCameraUsageDescription: Reason for accessing the camera.
+    Required for capturing receipts, addressing requirement TR-F002.2 in 'Technical Specification/13.2 Expense Submission' to utilize OCR technology for automatic receipt scanning and data extraction.
+    -->
+    <key>NSCameraUsageDescription</key>
+    <string>This app requires access to the camera to capture receipts.</string>
+
+    <!--
+    NSPhotoLibraryUsageDescription: Reason for accessing the photo library.
+    Required for uploading receipts, addressing requirement TR-F002.4 in 'Technical Specification/13.2 Expense Submission' to allow attachment of digital receipts or photos of physical receipts.
+    -->
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app requires access to the photo library to upload receipts.</string>
+
+    <!--
+    NSLocationWhenInUseUsageDescription: Reason for accessing location while app is in use.
+    Required for mileage tracking with GPS integration as per requirement TR-F002.7 in 'Technical Specification/13.2 Expense Submission'.
+    -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app requires access to your location to track mileage expenses.</string>
+
+    <!--
+    UIBackgroundModes: Specifies the background modes that the app uses.
+    Including 'remote-notification' allows the app to receive push notifications, addressing requirement TR-F008.2 in 'Technical Specification/13.8 Mobile Features'.
+    -->
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>remote-notification</string>
+    </array>
+
+    <!--
+    Dependencies:
+    - AppDelegate.swift (src/web/src/mobile/src/ios/AppDelegate.swift) handles application lifecycle events and integrates React Native.
+    - Podfile (src/web/src/mobile/src/ios/Podfile) manages dependencies for the iOS application using CocoaPods.
+    - Contents.json (src/web/src/mobile/src/ios/Assets.xcassets/AppIcon.appiconset/Contents.json) specifies app icon sizes and scales for different devices.
+    These dependencies support the functionalities defined in this Info.plist and are crucial for compliance with 'Mobile Features' in 'Technical Specification/13.8 Mobile Features'.
+    -->
+</dict>
+</plist>
