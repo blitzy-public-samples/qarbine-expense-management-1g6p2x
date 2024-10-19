@@ -1,0 +1,88 @@
+/* 
+ * Styles for the ApprovalList component.
+ * This file addresses the 'Approval Workflow' requirement as specified in:
+ * Technical Specification/13.4 Approval Workflow
+ * - Streamline the approval process for submitted expense reports with configurable workflows, batch processing, and delegation capabilities.
+ *
+ * Dependencies:
+ * - ApprovalList component (src/web/src/components/ApprovalList.tsx)
+ * - ApprovalDashboard page (src/web/src/pages/ApprovalDashboard.tsx)
+ */
+
+/* 
+ * Styles the container for the approval list, ensuring proper layout and spacing.
+ * Addresses UI layout requirements for the approval workflow.
+ * Refer to Technical Specification/13.4 Approval Workflow - TR-F004.3 Provide in-app notifications for pending approvals.
+ */
+.approval-list {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* 
+ * Styles individual approval items within the list, providing visual separation and interaction feedback.
+ * Enhances user experience for managers reviewing expense reports.
+ * Refer to Technical Specification/13.4 Approval Workflow - TR-F004.1 Configure multi-level approval workflows.
+ */
+.approval-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+}
+
+/* 
+ * Provides a hover effect for approval items to enhance user interaction.
+ * Improves usability by giving visual feedback on interactive elements.
+ * Related to Technical Specification/13.4 Approval Workflow - Enhances interaction for TR-F004.2 Enable batch approval capabilities for managers.
+ */
+.approval-item:hover {
+    background-color: #e6f7ff;
+}
+
+/* 
+ * Styles the container for approval and rejection buttons within each approval item.
+ * Aligns action buttons properly for manager convenience.
+ * Refer to Technical Specification/13.4 Approval Workflow - TR-F004.2 Enable batch approval capabilities for managers.
+ */
+.approval-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* 
+ * Styles the buttons used for approving or rejecting expenses, ensuring they are prominent and accessible.
+ * Enhances accessibility and prominence of action buttons.
+ * Refer to Technical Specification/13.4 Approval Workflow - TR-F004.4 Allow managers to request additional information or clarification on expenses.
+ */
+.approval-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* 
+ * Styles the approve button with a green background to indicate positive action.
+ * Uses color coding to indicate action type, improving user experience.
+ * Refer to Technical Specification/13.4 Approval Workflow - TR-F004.3 Provide in-app notifications for pending approvals (visual cues).
+ */
+.approval-button.approve {
+    background-color: #28a745;
+}
+
+/* 
+ * Styles the reject button with a red background to indicate negative action.
+ * Uses color coding to indicate action type, improving user experience.
+ * Refer to Technical Specification/13.4 Approval Workflow - TR-F004.4 Allow managers to request additional information or clarification on expenses.
+ */
+.approval-button.reject {
+    background-color: #dc3545;
+}
