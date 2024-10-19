@@ -1,0 +1,22 @@
+{
+  // Development configuration for the Reporting and Analytics Service
+  // Requirements Addressed:
+  // - Comprehensive Reporting and Analytics (Technical Specification/13.6 Reporting and Analytics)
+  //   Provide comprehensive reporting and analytical tools for tracking, managing, and forecasting expenses, tailored to different user roles.
+
+  "database": {
+    // MongoDB connection settings for development environment
+    "host": "dev-db-host",
+    "port": 27017,
+    "name": "reporting_db_dev"
+  },
+  "auth": {
+    // Authentication settings for JWT
+    "jwtSecret": "your_dev_jwt_secret",
+    "tokenExpiry": "1h"
+  },
+  "services": {
+    // Service endpoint for accessing report APIs in development
+    "reportServiceEndpoint": "http://dev.api.yourdomain.com/api/reports"
+  }
+}
