@@ -1,0 +1,54 @@
+{
+  /*
+    Production configuration settings for the authentication service, providing environment-specific values that override the default configuration for deployment in a production environment.
+
+    Requirements Addressed:
+    - User Authentication and Authorization
+      Location: Technical Specification/13.1 User Authentication and Authorization
+      Description: Manage secure user access and permissions within the application, ensuring that only authorized users can perform specific actions based on their roles.
+  */
+  "jwt": {
+    // JWT Secret: Secure key used for signing and verifying JWT tokens.
+    // Should be provided via the environment variable JWT_SECRET in production to enhance security.
+    "secret": "process.env.JWT_SECRET",
+
+    // Token Expiration: Defines how long the JWT token remains valid.
+    // Configurable through TOKEN_EXPIRATION environment variable or defaults to '1h'.
+    "expiration": "process.env.TOKEN_EXPIRATION || '1h'"
+  },
+  "bcrypt": {
+    // Bcrypt Salt Rounds: Determines the computational complexity of the hashing algorithm.
+    // Set via HASH_SALT_ROUNDS environment variable or defaults to 10.
+    "saltRounds": "process.env.HASH_SALT_ROUNDS || 10"
+  },
+  "database": {
+    // Database Host: The address of the database server.
+    // Must be specified through the DB_HOST environment variable.
+    "host": "process.env.DB_HOST",
+
+    // Database Port: The port number for the database connection.
+    // Configurable via DB_PORT environment variable or defaults to 5432.
+    "port": "process.env.DB_PORT || 5432",
+
+    // Database Username: The username for authenticating with the database.
+    // Provided through the DB_USERNAME environment variable.
+    "username": "process.env.DB_USERNAME",
+
+    // Database Password: The password for database authentication.
+    // Must be securely supplied via the DB_PASSWORD environment variable.
+    "password": "process.env.DB_PASSWORD",
+
+    // Database Name: The name of the database to connect to.
+    // Uses DB_NAME environment variable or defaults to 'auth_service'.
+    "database": "process.env.DB_NAME || 'auth_service'"
+  },
+  "server": {
+    // Server Port: The port on which the authentication service will run.
+    // Set using the PORT environment variable or defaults to 3000.
+    "port": "process.env.PORT || 3000",
+
+    // Server Host: The host address for the server.
+    // Configurable via HOST environment variable or defaults to '0.0.0.0'.
+    "host": "process.env.HOST || '0.0.0.0'"
+  }
+}
