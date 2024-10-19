@@ -1,0 +1,75 @@
+# Continuous Deployment workflow for Global Employee Travel Expense Tracking App
+# Requirement Addressed:
+# - Continuous Deployment Automation
+#   - Location: SYSTEM ARCHITECTURE/Deployment Architecture
+#   - Description: Automates the deployment of application updates to the production environment, ensuring rapid and reliable delivery of new features and bug fixes.
+
+name: Continuous Deployment
+
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow on push to the main branch
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    # Description: Deploys the application to the production environment using Terraform.
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository Code
+        # Step: Checkout the repository code using actions/checkout@v2.
+        # External Dependency:
+        # - actions/checkout
+        #   - Module: GitHub Actions
+        #   - Version: v2
+        #   - Purpose: Checks out the repository code for the workflow.
+        uses: actions/checkout@v2
+
+      - name: Set up Terraform
+        # Step: Set up Terraform CLI using hashicorp/setup-terraform@v1.
+        # External Dependency:
+        # - hashicorp/setup-terraform
+        #   - Module: GitHub Actions
+        #   - Version: v1
+        #   - Purpose: Sets up Terraform CLI in the GitHub Actions runner.
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Configure AWS Credentials
+        # Step: Configure AWS credentials using aws-actions/configure-aws-credentials@v1.
+        # External Dependency:
+        # - aws-actions/configure-aws-credentials
+        #   - Module: GitHub Actions
+        #   - Version: v1
+        #   - Purpose: Configures AWS credentials for deploying resources.
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Deploy with Terraform
+        # Steps:
+        # - Navigate to the Terraform configuration directory.
+        # - Execute the deploy_scripts.sh to apply Terraform configurations.
+        # Internal Dependencies:
+        # - infrastructure/terraform/modules/ci-cd/main.tf
+        #   - Purpose: Defines the main resources and configurations for the CI/CD infrastructure.
+        # - infrastructure/terraform/scripts/deploy_scripts.sh
+        #   - Purpose: Automates the deployment process of the Terraform infrastructure.
+        run: |
+          cd infrastructure/terraform
+          bash scripts/deploy_scripts.sh
+
+      - name: Monitor Deployment Process
+        # Step: Monitor the deployment process and log outputs.
+        # The logs generated during the deployment are captured by GitHub Actions and can be reviewed in the workflow run details.
+        run: echo "Deployment logs are available in the workflow run."
+
+      - name: Handle Errors and Ensure Rollback
+        # Step: Handle any errors and ensure rollback if necessary.
+        # Error handling and rollback mechanisms are implemented within the deploy_scripts.sh script.
+        # If errors occur, the script should handle rollback accordingly.
+        if: failure()
+        run: echo "Deployment failed. Please check the logs for details and ensure rollback procedures are executed."
