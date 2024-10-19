@@ -1,0 +1,19 @@
+{
+  // Prettier Configuration File for Approval Workflow Service
+  // Dependency:
+  // - Uses 'prettier' version 2.3.2 for formatting code to ensure consistency across the codebase.
+
+  // Requirements Addressed:
+  // - Code Quality and Consistency (Technical Specification/Development Guidelines/Code Quality)
+  //   Ensures consistent coding standards and practices across the codebase to maintain readability and reduce errors.
+
+  "printWidth": 80,          // Wrap lines that exceed 80 characters for better readability.
+  "tabWidth": 2,             // Use 2 spaces per indentation level to maintain uniform code structure.
+  "useTabs": false,          // Use spaces instead of tabs for indentation.
+  "semi": true,              // End statements with semicolons to prevent potential runtime errors.
+  "singleQuote": true,       // Use single quotes for strings for consistency and to avoid escaping.
+  "trailingComma": "es5",    // Include trailing commas where valid in ES5 (objects, arrays, etc.) to simplify additions.
+  "bracketSpacing": true,    // Include spaces between brackets in object literals for better readability.
+  "jsxBracketSameLine": false, // Place the closing `>` of JSX elements on a new line for clearer code structure.
+  "arrowParens": "avoid"     // Omit parentheses when they are not needed in arrow functions for cleaner syntax.
+}
