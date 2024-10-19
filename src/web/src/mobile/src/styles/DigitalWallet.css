@@ -1,0 +1,79 @@
+/* 
+ * DigitalWallet.css
+ * 
+ * This CSS file provides styling for the Digital Wallet component in the mobile application,
+ * ensuring a responsive and visually appealing interface for managing digital transactions and balances.
+ *
+ * Requirements Addressed:
+ * - Mobile Features (Technical Specification/13.8 Mobile Features)
+ *   - Enhance the mobile experience on iOS and Android devices.
+ *   - TR-F008.4: Include a digital wallet for storing receipts and travel documents.
+ */
+
+/* 
+ * Styles the main container of the digital wallet component.
+ * Ensures it is responsive and visually appealing.
+ * Addresses TR-F008.4 in Technical Specification/13.8 Mobile Features.
+ */
+.digital-wallet {
+    /* Use flex layout for responsiveness */
+    display: flex;
+    /* Arrange child elements vertically */
+    flex-direction: column;
+    /* Horizontally center items */
+    align-items: center;
+    /* Add padding around the content */
+    padding: 20px;
+    /* Set a light background color */
+    background-color: #f9f9f9;
+    /* Round the corners of the container */
+    border-radius: 8px;
+    /* Apply a subtle shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*
+ * Styles the wallet balance display.
+ * Highlights the current balance with larger font size and bold text.
+ * Enhances visibility of critical information to the user.
+ */
+.wallet-balance {
+    /* Increase font size for emphasis */
+    font-size: 24px;
+    /* Make text bold to stand out */
+    font-weight: bold;
+    /* Set text color to dark gray for readability */
+    color: #333;
+}
+
+/*
+ * Styles the list of transactions within the digital wallet.
+ * Ensures each transaction is clearly separated and readable.
+ * Improves user experience in viewing transaction history.
+ */
+.transaction-list {
+    /* Occupy full width of the container */
+    width: 100%;
+    /* Add space above the list */
+    margin-top: 15px;
+    /* Remove default list styling */
+    list-style-type: none;
+    /* Remove default padding */
+    padding: 0;
+}
+
+/*
+ * Styles individual transaction items.
+ * Provides a clean and organized look with subtle dividers.
+ * Enhances readability and organizes transaction details effectively.
+ */
+.transaction-item {
+    /* Add vertical padding for spacing */
+    padding: 10px 0;
+    /* Add a bottom border as a divider between items */
+    border-bottom: 1px solid #e0e0e0;
+    /* Use flex layout to arrange content */
+    display: flex;
+    /* Space out child elements evenly */
+    justify-content: space-between;
+}
